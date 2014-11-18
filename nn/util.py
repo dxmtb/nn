@@ -1,14 +1,15 @@
 import numpy as np
 import cPickle
+import math
 
-def uniform(num_rows, num_cols, bound):
+def uniform(size, bound):
     '''Initialize a matrix shared variable with normally distributed
 elements.'''
-    return np.random.uniform(low=-bound, high=bound, size=(num_rows, num_cols))
+    return np.random.uniform(low=-bound, high=bound, size=size).astype(np.float32)
 
-def zeros(*shape):
+def zeros(shape):
     '''Initialize a vector shared variable with zero elements.'''
-    return np.zeros(shape)
+    return np.zeros(shape).astype(np.float32)
 
 def unpickle(file):
     fo = open(file, 'rb')
@@ -31,3 +32,12 @@ def load_CIFAR_batches(files):
 
     return inputs, outputs
 
+def max_argax(array, start_i, end_i, start_j, end_j):
+    ind = (start_i, start_j)
+    ret = array[ind]
+    for i in xrange(start_i, end_i):
+        for j in xrange(start_j, end_j):
+            if array[i][j] > ret:
+                ret = array[i][j]
+                ind = (i, j)
+    return ret, ind
