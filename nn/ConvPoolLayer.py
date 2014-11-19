@@ -59,7 +59,7 @@ class ConvPoolLayer(object):
         assert (height, width) == self.image_shape
 
         # do convolve2d
-        after_filter = np.zeros((batch_size, n_output, n_height, n_width), dtype=np.float32)
+        after_filter = util.zeros((batch_size, n_output, n_height, n_width))
         for index in np.ndindex(batch_size, n_output):
             i, q = index
             result = after_filter[index]
@@ -71,8 +71,8 @@ class ConvPoolLayer(object):
         # do pooling
         ret_h = int(math.ceil(float(n_height) / poolsize[0]))
         ret_w = int(math.ceil(float(n_width) / poolsize[1]))
-        ret = np.zeros((batch_size, n_output, ret_h, ret_w), dtype=np.float32)
-        M = np.zeros((batch_size, n_output, n_height, n_width), dtype=np.float32)
+        ret = util.zeros((batch_size, n_output, ret_h, ret_w))
+        M = util.zeros((batch_size, n_output, n_height, n_width))
 
         for i in xrange(batch_size):
             for j in xrange(n_output):

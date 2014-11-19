@@ -10,4 +10,8 @@ class MLP(NeuralNetwork):
         self.layers=[HiddenLayer(in_dim, hidden_dim, self.activation, self.grad_activation)]
         for _ in xrange(layer_num):
             self.layers.append(HiddenLayer(hidden_dim, hidden_dim, self.activation, self.grad_activation))
-        self.layers.append(HiddenLayer(hidden_dim, out_dim, self.activation, self.grad_activation))
+        if loss_type == 'mse':
+            self.layers.append(HiddenLayer(hidden_dim, out_dim, self.activation, self.grad_activation))
+        else:
+            from SoftmaxLayer import SoftmaxLayer
+            self.layers.append(SoftmaxLayer(hidden_dim, out_dim, self.activation, self.grad_activation))

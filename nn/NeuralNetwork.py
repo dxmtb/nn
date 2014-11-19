@@ -1,5 +1,6 @@
 import numpy as np
 import logging
+from util import softmax
 
 class NeuralNetwork(object):
     def __init__(self, activation, loss_type):
@@ -51,12 +52,22 @@ class NeuralNetwork(object):
             self.train_batch(X_train[start: end], y_train[start: end], lr)
             logging.info('Epoch %d Loss %lf' % (epoch, self.loss(X_train, y_train)))
 
-    def train_batch(self, X_train, y_train, lr):
+    def train_batch(self, X_train, y_train, lr, update=True):
+        outputs = self.forward(X_train)
+        self.backward(y_train, outputs)
+
+        if update:
+            for layer in self.layers:
+                layer.do_update(lr)
+
+    def forward(self, X_train):
         outputs = [X_train]
         for layer in self.layers:
             output = layer.activate(outputs[-1])
             outputs.append(output)
+        return outputs
 
+    def backward(self, y_train, outputs):
         error = self.error_last_layer(y_train, self.filter_output(outputs[-1]))
         for i in reversed(xrange(len(self.layers))):
             # outputs[i] is input to layer i
@@ -64,9 +75,6 @@ class NeuralNetwork(object):
             layer.grad(error, outputs[i])
             if i != 0:
                 error = layer.error(error, outputs[i])
-
-        for layer in self.layers:
-            layer.do_update(lr)
 
     def _output(self, X):
         output = X
