@@ -1,8 +1,8 @@
 import numpy as np
 import util
-import logging
 
-class HiddenLayer(object):
+
+class FullyConnectedLayer(object):
     def __init__(self, in_dim, out_dim, activation, grad_activation):
         """
         output = f(x .* W + b)
@@ -16,6 +16,8 @@ class HiddenLayer(object):
         self.b = util.zeros((out_dim,))
         self.activation = activation
         self.grad_activation = grad_activation
+        
+        self.params = ['W', 'b']
 
     def activate(self, input):
         return self.activation(np.dot(input, self.W) + self.b)
@@ -41,4 +43,3 @@ class HiddenLayer(object):
     def do_update(self, learning_rate):
         self.W -= learning_rate * self.W_grad
         self.b -= learning_rate * self.b_grad
-

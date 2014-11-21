@@ -1,23 +1,26 @@
 import numpy as np
 import cPickle
-import math
 
 FLOAT = np.float64
+
 
 def uniform(size, bound):
     '''Initialize a matrix shared variable with normally distributed
 elements.'''
     return np.random.uniform(low=-bound, high=bound, size=size).astype(FLOAT)
 
+
 def zeros(shape):
     '''Initialize a vector shared variable with zero elements.'''
     return np.zeros(shape).astype(FLOAT)
+
 
 def unpickle(file):
     fo = open(file, 'rb')
     dict = cPickle.load(fo)
     fo.close()
     return dict
+
 
 def load_CIFAR_batches(files):
     X = []
@@ -34,7 +37,8 @@ def load_CIFAR_batches(files):
 
     return inputs, outputs
 
-def max_argax(array, start_i, end_i, start_j, end_j):
+
+def max_argmax(array, start_i, end_i, start_j, end_j):
     ind = (start_i, start_j)
     ret = array[ind]
     for i in xrange(start_i, end_i):
@@ -43,6 +47,7 @@ def max_argax(array, start_i, end_i, start_j, end_j):
                 ret = array[i][j]
                 ind = (i, j)
     return ret, ind
+
 
 def softmax(a):
     logsum = np.log(np.sum(np.exp(a), axis=1))

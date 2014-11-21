@@ -1,17 +1,19 @@
-import numpy as np
-from HiddenLayer import HiddenLayer
+from FullyConnectedLayer import FullyConnectedLayer
 from NeuralNetwork import NeuralNetwork
-import logging
+
 
 class MLP(NeuralNetwork):
-    def __init__(self, in_dim, hidden_dim, out_dim, activation, loss_type, layer_num=0):
+    def __init__(self, in_dim, hidden_dim, out_dim, activation, loss_type,
+                 layer_num=0):
         NeuralNetwork.__init__(self, activation, loss_type)
 
-        self.layers=[HiddenLayer(in_dim, hidden_dim, self.activation, self.grad_activation)]
+        args = [self.activation, self.grad_activation]
+        self.layers = []
+        self.layers.append(FullyConnectedLayer(in_dim, hidden_dim, *args))
         for _ in xrange(layer_num):
-            self.layers.append(HiddenLayer(hidden_dim, hidden_dim, self.activation, self.grad_activation))
+            self.layers.append(FullyConnectedLayer(hidden_dim, hidden_dim, *args))
         if loss_type == 'mse':
-            self.layers.append(HiddenLayer(hidden_dim, out_dim, self.activation, self.grad_activation))
+            self.layers.append(FullyConnectedLayer(hidden_dim, out_dim, *args))
         else:
             from SoftmaxLayer import SoftmaxLayer
-            self.layers.append(SoftmaxLayer(hidden_dim, out_dim, self.activation, self.grad_activation))
+            self.layers.append(SoftmaxLayer(hidden_dim, out_dim, *args))
