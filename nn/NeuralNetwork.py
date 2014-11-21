@@ -1,6 +1,11 @@
 import numpy as np
 import logging
 
+import gflags
+import datetime
+
+gflags.DEFINE_integer('batch_report_sec', 60, 'report batch loss every n seconds')
+gflags.DEFINE_string('dump_prefix', 'theta', 'prefix of dump filename')
 
 class NeuralNetwork(object):
     def __init__(self, activation, loss_type):
@@ -41,13 +46,20 @@ class NeuralNetwork(object):
 
         for epoch in xrange(n_epochs):
             epoch_loss = 0.0
+            end_time = datetime.datetime.now()
             for batch in xrange(batch_n):
                 start = batch * batch_size
                 end = min((batch + 1) * batch_size, len(X_train))
                 batch_loss = self.train_batch(X_train[start: end], y_train[start: end], lr)
-                logging.info('Epoch %d Batch %d Batch loss %lf' % (epoch, batch, batch_loss))
                 epoch_loss += batch_loss
-            logging.info('Epoch %d Loss %lf' % (epoch, epoch_loss))
+
+                if datetime.datetime.now() > end_time:
+                    logging.info('Epoch %d Batch %d Avg loss %lf' % 
+                                 (epoch, batch, epoch_loss/end))
+                    end_time = datetime.datetime.now() + \
+                        datetime.timedelta(0, gflags.FLAGS.batch_report_sec)
+
+            logging.info('Epoch %d Loss %lf' % (epoch, epoch_loss/N))
 
     def test_fit(self, X_train, y_train, n_epochs, batch_size, lr):
         logging.info('start test fitting')
