@@ -118,3 +118,19 @@ class NeuralNetwork(object):
 
         return param, param_grad, tuple(ind)
 
+    def dump(self, fname):
+        theta = {}
+        for layer_ind, layer in enumerate(self.layers):
+            for param_name in layer.params:
+                param = getattr(layer, param_name)
+                theta['%d_%s' % (layer_ind, param_name)] = param
+        np.savez(open(fname, 'wb'), **theta)
+
+    def load(self, fname):
+        theta = np.load(fname)
+        for layer_ind, layer in enumerate(self.layers):
+            for param_name in layer.params:
+                param = theta['%d_%s' % (layer_ind, param_name)]
+                old_param = getattr(layer, param_name)
+                assert param.shape == old_param.shape
+                setattr(layer, param_name, param)
