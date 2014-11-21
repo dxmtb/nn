@@ -10,13 +10,15 @@ class CNN(NeuralNetwork):
 
         args = [self.activation, self.grad_activation]
 
+        filter_num = 8
+
         self.layers = []
-        self.layers.append(ConvPoolLayer((64, 3, 5, 5), poolsize, *args))
-        self.layers.append(ConvPoolLayer((64, 64, 5, 5), poolsize, *args))
+        self.layers.append(ConvPoolLayer((8, 3, 5, 5), poolsize, *args))
+        self.layers.append(ConvPoolLayer((8, filter_num, 5, 5), poolsize, *args))
 
         # (32-5+1)/2 = 14
         # (14-5+1)/2 = 5
-        dim = 5 * 5 * 64
+        dim = 5 * 5 * filter_num
 
         self.layers.append(FlattenLayer())
 

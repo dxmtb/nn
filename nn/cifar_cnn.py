@@ -34,8 +34,8 @@ def main(argv):
     argv = FLAGS(argv)
     inputs, outputs = load_CIFAR_train(FLAGS.datapath)
     nn = CNN(10, FLAGS.activation, FLAGS.loss_type)
-    nn.test_fit(inputs , outputs, FLAGS.epoch, FLAGS.batch, FLAGS.lr)
-    #print nn.test(*load_CIFAR_test(FLAGS.datapath))
+    nn.fit(inputs , outputs, FLAGS.epoch, FLAGS.batch, FLAGS.lr)
+    print nn.test(*load_CIFAR_test(FLAGS.datapath))
 
 
 if __name__ == '__main__':

@@ -45,7 +45,7 @@ class NeuralNetwork(object):
                 start = batch * batch_size
                 end = min((batch + 1) * batch_size, len(X_train))
                 batch_loss = self.train_batch(X_train[start: end], y_train[start: end], lr)
-                logging.info('Epoch %d Batch %d Batch loss' % (epoch, batch, batch_loss))
+                logging.info('Epoch %d Batch %d Batch loss %lf' % (epoch, batch, batch_loss))
                 epoch_loss += batch_loss
             logging.info('Epoch %d Loss %lf' % (epoch, epoch_loss))
 
@@ -56,7 +56,6 @@ class NeuralNetwork(object):
             end = min(batch_size, len(X_train))
             batch_loss = self.train_batch(X_train[start: end], y_train[start: end], lr)
             logging.info('Epoch %d Loss %lf' % (epoch, batch_loss))
-            break
 
     def train_batch(self, X_train, y_train, lr, update=True):
         outputs = self.forward(X_train)
@@ -95,6 +94,7 @@ class NeuralNetwork(object):
         return self.loss_func(y_test, outputs)
 
     def test(self, X_test, y_test):
+        logging.info('Start testing: len %d' % (len(X_test)))
         outputs = self.output(X_test)
         y_true = np.argmax(y_test, axis=1)
         y_pred = np.argmax(outputs, axis=1)
