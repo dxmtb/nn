@@ -7,13 +7,13 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%
 import gflags
 FLAGS = gflags.FLAGS
 # model
-gflags.DEFINE_integer('hidden_dim', 1000, 'hidden dim')
+gflags.DEFINE_integer('hidden_dim', 500, 'hidden dim')
 gflags.DEFINE_string('loss_type', 'mse', 'final loss type(mse or softmax)')
 gflags.DEFINE_integer('layer_num', 0, 'additional layer number')
 gflags.DEFINE_string('activation', 'tanh', 'activation function')
 # train
 gflags.DEFINE_float('lr', 0.0001, 'learning rate')
-gflags.DEFINE_integer('epoch', 100, 'Epoch number')
+gflags.DEFINE_integer('epoch', 500, 'Epoch number')
 gflags.DEFINE_integer('batch', 100, 'batch size')
 # data
 gflags.DEFINE_string('datapath', '../database/', 'path to CIFAR-10 data')

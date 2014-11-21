@@ -1,7 +1,7 @@
 import numpy as np
 import cPickle
 
-FLOAT = np.float64
+FLOAT = np.float32
 
 
 def uniform(size, bound):
