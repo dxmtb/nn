@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
-from MLP import MLP
-from CNN import CNN
-import util
+from nn.MLP import MLP
+from nn.CNN import CNN
+from nn import util
 
 import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s', datefmt='%a, %d %b %Y %H:%M:%S')

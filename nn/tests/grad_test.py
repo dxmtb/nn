@@ -1,12 +1,14 @@
 import unittest
 import numpy as np
-from MLP import MLP
-from CNN import CNN
-import util
+from nn MLP import MLP
+from nn.CNN import CNN
+from nn import util
 
 import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s', datefmt='%a, %d %b %Y %H:%M:%S')
 
+import gflags
+FLAGS = gflags.FLAGS
 
 class GradientTestCase(unittest.TestCase):
     def testGrad(self):
@@ -52,14 +54,18 @@ class MLPGradientTestCase(GradientTestCase):
         for layer in nn.layers:
             layer.b = util.uniform(layer.b.shape, 0.5)
 
+        self.X_train = self.X_train.astype(util.FLOAT())
+        self.y_train = self.y_train.astype(util.FLOAT())
+
 class CNNGradientTestCase(GradientTestCase):
-    def __init__(self, activation, loss_type, methodName='testGrad', EPSILON=1e-4):
+    def __init__(self, activation, loss_type, methodName='testGrad', EPSILON=1e-7):
         super(CNNGradientTestCase, self).__init__(methodName)
         self.activation = activation
         self.loss_type = loss_type
         self.EPSILON = EPSILON
 
     def setUp(self):
+        FLAGS.floatX = 'float64'
         out_dim = 10
         self.nn = CNN(10, self.activation, self.loss_type)
         self.X_train = util.uniform((1, 3, 32, 32), 10.0)
@@ -68,6 +74,9 @@ class CNNGradientTestCase(GradientTestCase):
             self.y_train[0][np.random.randint(out_dim)] = 1.0
         else:
             self.y_train = util.uniform((1, out_dim), 1.0)
+
+        self.X_train = self.X_train.astype(util.FLOAT())
+        self.y_train = self.y_train.astype(util.FLOAT())
 
 def suite(activation, loss_type):
     suite = unittest.TestSuite()
