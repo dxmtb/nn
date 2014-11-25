@@ -15,7 +15,7 @@ def benchmark_scipy(W, feature_maps):
         after_filter = scipy.signal.convolve2d(feature_maps[0][0], W[0][0], mode='valid')
 
     t1 = time.time()
-    print t1-t0
+    print (t1-t0)/TEST_NUM
 
     return after_filter
 
@@ -38,7 +38,7 @@ def benchmark_theano(W, feature_maps):
         after_filter = func(feature_maps, W)
 
     t1 = time.time()
-    print t1-t0
+    print (t1-t0)/TEST_NUM
 
     return after_filter
 

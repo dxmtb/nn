@@ -1,18 +1,27 @@
 import numpy as np
 import cPickle
 
-FLOAT = np.float32
+import gflags
+FLAGS = gflags.FLAGS
+gflags.DEFINE_string('floatX', 'float32', 'use float32 (for speed) or float64 (for testing)')
+
+def FLOAT():
+    if FLAGS.floatX == 'float32':
+        return np.float32
+    else:
+        assert FLAGS.floatX == 'float64'
+        return np.float64
 
 
 def uniform(size, bound):
     '''Initialize a matrix shared variable with normally distributed
 elements.'''
-    return np.random.uniform(low=-bound, high=bound, size=size).astype(FLOAT)
+    return np.random.uniform(low=-bound, high=bound, size=size).astype(FLOAT())
 
 
 def zeros(shape):
     '''Initialize a vector shared variable with zero elements.'''
-    return np.zeros(shape).astype(FLOAT)
+    return np.zeros(shape).astype(FLOAT())
 
 
 def unpickle(file):
@@ -35,7 +44,7 @@ def load_CIFAR_batches(files):
         assert y >= 0 and y <= 9
         outputs[i][y] = 1
 
-    return inputs, outputs
+    return inputs.astype(FLOAT()), outputs.astype(FLOAT())
 
 
 def max_argmax(array, start_i, end_i, start_j, end_j):

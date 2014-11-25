@@ -3,6 +3,7 @@ import logging
 
 import gflags
 import datetime
+import util
 
 gflags.DEFINE_integer('batch_report_sec', 60, 'report batch loss every n seconds')
 gflags.DEFINE_string('dump_prefix', 'theta', 'prefix of dump filename')
@@ -19,6 +20,9 @@ class NeuralNetwork(object):
             from scipy.special import expit
             self.activation = expit
             self.grad_activation = lambda x: x*(1.-x)
+        elif activation == 'relu':
+            self.activation = lambda x: np.maximum(x, 0)
+            self.grad_activation = lambda x: (x>0).astype(util.FLOAT())
         else:
             raise NotImplementedError('Unknown activation function: ' +
                                       activation)
@@ -62,12 +66,14 @@ class NeuralNetwork(object):
             logging.info('Epoch %d Loss %lf' % (epoch, epoch_loss/N))
 
     def test_fit(self, X_train, y_train, n_epochs, batch_size, lr):
+        X_train = X_train[:batch_size]
+        y_train = y_train[:batch_size]
         logging.info('start test fitting')
         for epoch in xrange(n_epochs):
-            start = 0
-            end = min(batch_size, len(X_train))
-            batch_loss = self.train_batch(X_train[start: end], y_train[start: end], lr)
+            batch_loss = self.train_batch(X_train, y_train, lr)
             logging.info('Epoch %d Loss %lf' % (epoch, batch_loss))
+        print self.test(X_train, y_train)
+        
 
     def train_batch(self, X_train, y_train, lr, update=True):
         outputs = self.forward(X_train)

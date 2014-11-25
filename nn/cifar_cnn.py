@@ -7,12 +7,10 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%
 import gflags
 FLAGS = gflags.FLAGS
 # model
-gflags.DEFINE_integer('hidden_dim', 1000, 'hidden dim')
-gflags.DEFINE_string('loss_type', 'mse', 'final loss type(mse or softmax)')
+gflags.DEFINE_string('loss_type', 'softmax', 'final loss type(mse or softmax)')
 gflags.DEFINE_string('activation', 'tanh', 'activation function')
 # train
-gflags.DEFINE_float('lr', 0.0001, 'learning rate')
-gflags.DEFINE_integer('epoch', 100, 'Epoch number')
+gflags.DEFINE_integer('epoch', 50, 'Epoch number')
 gflags.DEFINE_integer('batch', 100, 'batch size')
 # data
 gflags.DEFINE_string('datapath', '../database/', 'path to CIFAR-10 data')
@@ -34,8 +32,8 @@ def main(argv):
     argv = FLAGS(argv)
     inputs, outputs = load_CIFAR_train(FLAGS.datapath)
     nn = CNN(10, FLAGS.activation, FLAGS.loss_type)
-    nn.fit(inputs , outputs, FLAGS.epoch, FLAGS.batch, FLAGS.lr)
-    print nn.test(*load_CIFAR_test(FLAGS.datapath))
+    nn.test_fit(inputs, outputs, FLAGS.epoch, FLAGS.batch, 0.0001)
+    # print nn.test(*load_CIFAR_test(FLAGS.datapath))
 
 
 if __name__ == '__main__':

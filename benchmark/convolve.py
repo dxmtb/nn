@@ -28,8 +28,8 @@ def benchmark_theano(W, feature_maps, batch_size):
     conv_out = conv.conv2d(
         input=inputs,
         filters=filters,
-        filter_shape=(32, 3, 5, 5),
-        image_shape=(batch_size, 3, 32, 32)
+#        filter_shape=(32, 3, 5, 5),
+#        image_shape=(batch_size, 3, 32, 32)
     )
 
     func = theano.function([inputs, filters], conv_out)

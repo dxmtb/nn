@@ -1,21 +1,108 @@
 import numpy as np
 import util
 from util import max_argmax
-from scipy.signal import convolve2d as conv
+import logging
+import scipy.signal
 
+import gflags
+FLAGS = gflags.FLAGS
+gflags.DEFINE_bool('theano_conv', True, 'whether to use theano for convolve2d')
+
+def upsample(error_before_pooling, error_output, pool_h, pool_w):
+    tmp = np.kron(error_output, np.ones((1, 1, pool_h, pool_w)))
+    tmp = tmp[:error_before_pooling.shape[0],
+              :error_before_pooling.shape[1],
+              :error_before_pooling.shape[2],
+              :error_before_pooling.shape[3]]
+    np.multiply(tmp, error_before_pooling, out=error_before_pooling)
+
+def py_do_pooling(after_filter, poolsize):
+    batch_size, n_output, n_height, n_width = after_filter.shape
+    pool_h, pool_w = poolsize
+    ret_h = int(float(n_height) / pool_h)
+    ret_w = int(float(n_width) / pool_w)
+    ret = util.zeros((batch_size, n_output, ret_h, ret_w))
+    M = util.zeros((batch_size, n_output, n_height, n_width))
+    ret.fill(-np.inf)
+
+    for i, j, h, w in np.ndindex(ret.shape):
+        ret[i][j][h][w], ind = max_argmax(after_filter[i][j],
+                                          h*pool_h, (h+1)*pool_h,
+                                          w*pool_w, (w+1)*pool_w)
+        M[i][j][ind] = 1
+
+    return M, ret
+
+import ctypes as ct
+import os
+
+try:
+    _DLL = np.ctypeslib.load_library('pooling.so',
+            os.path.join(os.path.dirname(__file__)))
+except Exception as error:
+    raise error
+
+_DLL.do_pooling.restype = _DLL.do_pooling.restype = None
+
+def ct_do_pooling(after_filter, poolsize):
+    batch_size, n_output, n_height, n_width = after_filter.shape
+    pool_h, pool_w = poolsize
+    ret_h = int(float(n_height) / pool_h)
+    ret_w = int(float(n_width) / pool_w)
+    M = np.ascontiguousarray(util.zeros((batch_size, n_output, n_height, n_width)))
+    ret = np.ascontiguousarray(util.zeros((batch_size, n_output, ret_h, ret_w)))
+    assert after_filter.dtype == M.dtype
+    _DLL.do_pooling(ct.c_int(after_filter.itemsize),
+                    ct.c_int(batch_size),
+                    ct.c_int(n_output),
+                    ct.c_int(n_height),
+                    ct.c_int(n_width),
+                    ct.c_int(pool_h),
+                    ct.c_int(pool_w),
+                    ct.c_int(ret_h),
+                    ct.c_int(ret_w),
+                    after_filter.ctypes.data_as(ct.c_void_p),
+                    ret.ctypes.data_as(ct.c_void_p),
+                    M.ctypes.data_as(ct.c_void_p))
+    return M, ret
 
 def conv_valid(*args):
-    return conv(*args, mode='valid')
-
+    return scipy.signal.convolve2d(*args, mode='valid')
 
 def conv_full(*args):
-    return conv(*args, mode='full')
+    return scipy.signal.convolve2d(*args, mode='full')
 
+def conv2d_func(image_shape, filter_shape, mode):
+    import theano
+    import theano.tensor as T
+    if FLAGS.floatX == 'float32':
+        inputs = T.ftensor4()
+        filters = T.ftensor4()
+    else:
+        inputs = T.dtensor4()
+        filters = T.dtensor4()
+    conv_out = theano.tensor.nnet.conv2d(
+        input=inputs,
+        filters=filters,
+#        filter_shape=filter_shape[2:],
+#        image_shape=image_shape,
+        border_mode=mode
+    )
+    func = theano.function([inputs, filters], conv_out)
+    return func
+
+def rot90(tensor):
+    ret = util.zeros(tensor.shape)
+    for i, j in np.ndindex(tensor.shape[:2]):
+        ret[i][j] = np.rot90(tensor[i][j], 2)
+    return ret
 
 class ConvPoolLayer(object):
-    def __init__(self, filter_shape, poolsize, activation, grad_activation):
+    def __init__(self, image_shape, filter_shape, poolsize, bound, activation, grad_activation):
         """
         Allocate a LeNetConvPoolLayer with shared variable internal parameters.
+
+        image_shape: (height, width)
 
         :type filter_shape: tuple or list of length 4
         :param filter_shape: (number of output filters, num input feature maps,
@@ -24,18 +111,40 @@ class ConvPoolLayer(object):
         :type poolsize: tuple or list of length 2
         :param poolsize: the downsampling (pooling) factor (#rows, #cols)
         """
-        fan_in = np.prod(filter_shape[1:])
-        fan_out = ((filter_shape[0] * np.prod(filter_shape[2:])) /
-                   (np.prod(poolsize)))
-        bound = np.sqrt(6.0 / (fan_in + fan_out))
+        if not bound:
+            fan_in = np.prod(filter_shape[1:])
+            fan_out = ((filter_shape[0] * np.prod(filter_shape[2:])) /
+                       (np.prod(poolsize)))
+            bound = np.sqrt(6.0 / (fan_in + fan_out))
         self.W = util.uniform(filter_shape, bound)
         self.b = util.zeros((filter_shape[0],))
         self.activation = activation
         self.grad_activation = grad_activation
         self.poolsize = poolsize
         self.filter_shape = filter_shape
+        self.output_shape = ((image_shape[0] - filter_shape[2] + 1) / poolsize[0],
+                             (image_shape[1] - filter_shape[3] + 1) / poolsize[1])
+        if FLAGS.theano_conv:
+            self._conv2d_valid = conv2d_func(image_shape, filter_shape, 'valid')
+            self._conv2d_full = conv2d_func(image_shape, filter_shape, 'full')
 
         self.params = ['W', 'b']
+
+    def do_pooling(self, after_filter, poolsize):
+        import time
+        t1 = time.time()
+        ret = ct_do_pooling(after_filter, poolsize)
+        t2 = time.time()
+        # print t2 - t1, after_filter.shape
+        return ret
+
+    def conv2d_valid(self, *args):
+        # wrap for profiling
+        return self._conv2d_valid(*args)
+
+    def conv2d_full(self, *args):
+        # wrap for profiling
+        return self._conv2d_full(*args)
 
     def activate(self, feature_maps):
         """
@@ -54,29 +163,22 @@ class ConvPoolLayer(object):
         assert feature_maps.shape[1] == n_input
 
         # do convolve2d
-        after_filter = util.zeros((batch_size, n_output, n_height, n_width))
-        for index in np.ndindex(batch_size, n_output):
-            i, q = index
-            result = after_filter[index]
-            for p in xrange(n_input):
-                result += conv_valid(feature_maps[i][p], np.rot90(W[q][p], 2))
-            result += b[q]
+        if FLAGS.theano_conv:
+            after_filter = self.conv2d_valid(feature_maps, rot90(W))
+        else:
+            after_filter = util.zeros((batch_size, n_output, n_height, n_width))
+            for index in np.ndindex(batch_size, n_output):
+                i, q = index
+                result = after_filter[index]
+                for p in xrange(n_input):
+                    result += conv_valid(feature_maps[i][p], np.rot90(W[q][p], 2))
+
+        after_filter += b[np.newaxis, :, np.newaxis, np.newaxis]
         after_filter = self.activation(after_filter)
 
         # do pooling
         # borders are ignored
-        ret_h = int(float(n_height) / pool_h)
-        ret_w = int(float(n_width) / pool_w)
-        ret = util.zeros((batch_size, n_output, ret_h, ret_w))
-        M = util.zeros((batch_size, n_output, n_height, n_width))
-
-        for i, j, h, w in np.ndindex(ret.shape):
-            ret[i][j][h][w], ind = max_argmax(after_filter[i][j],
-                                              h*pool_h, (h+1)*pool_h,
-                                              w*pool_w, (w+1)*pool_w)
-            M[i][j][ind] = 1
-
-        self.M = M
+        self.M, ret = self.do_pooling(after_filter, self.poolsize)
 
         return ret
 
@@ -98,12 +200,16 @@ class ConvPoolLayer(object):
         grad_activation = self.grad_activation
         error_before_pooling = self.error_before_pooling
 
-        ret = np.zeros((batch_size, n_input, height, width))
-        for i, j in np.ndindex(batch_size, n_input):
-            result = ret[i][j]
-            for k in xrange(n_output):
-                result += conv_full(error_before_pooling[i][k], W[k][j])
-            ret[i][j] = np.multiply(result, grad_activation(input[i][j]))
+        if FLAGS.theano_conv:
+            ret = self.conv2d_full(error_before_pooling, np.swapaxes(W, 0, 1))
+        else:
+            ret = util.zeros((batch_size, n_input, height, width))
+            for i, j in np.ndindex(batch_size, n_input):
+                result = ret[i][j]
+                for k in xrange(n_output):
+                    result += conv_full(error_before_pooling[i][k], W[k][j])
+
+        ret = np.multiply(ret, grad_activation(input))
 
         return ret
 
@@ -113,23 +219,26 @@ class ConvPoolLayer(object):
         error_output: (batch_size, # of filters,
                        h_after_filter, h_after_filter)
         """
+        import time
         pool_h, pool_w = self.poolsize
         error_before_pooling = np.copy(self.M)
-        for i, j, h, w in np.ndindex(error_before_pooling.shape):
-            if error_before_pooling[i][j][h][w] == 1:
-                error_before_pooling[i][j][h][w] = \
-                    error_output[i][j][h/pool_h][w/pool_w]
+        upsample(error_before_pooling, error_output, pool_h, pool_w)
 
         error_output = error_before_pooling
         self.error_before_pooling = error_before_pooling
 
         batch_size = input.shape[0]
 
-        W_grad = np.zeros(self.W.shape)
-        for q, p in np.ndindex(self.W.shape[:2]):
-            for i in xrange(batch_size):
-                W_grad[q][p] += conv_valid(input[i][p],
-                                           np.rot90(error_output[i][q], 2))
+        if FLAGS.theano_conv:
+            # (p, i, :, :) (q, i, :, :)
+            # (p, q, :, :)
+            rot_error_output = rot90(error_output)
+            W_grad = self.conv2d_valid(np.swapaxes(input, 0, 1), np.swapaxes(rot_error_output, 0, 1))
+            W_grad = np.swapaxes(W_grad, 0, 1)
+        else:
+            W_grad = util.zeros(self.W.shape)
+            for i, q, p in np.ndindex(batch_size, *self.W.shape[:2]):
+                W_grad[q][p] = conv_valid(input[i][p], np.rot90(error_output[i][q], 2))
 
         b_grad = np.sum(error_output, axis=(0, 2, 3))
 

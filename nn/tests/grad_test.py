@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from nn MLP import MLP
+from nn.MLP import MLP
 from nn.CNN import CNN
 from nn import util
 
@@ -80,7 +80,7 @@ class CNNGradientTestCase(GradientTestCase):
 
 def suite(activation, loss_type):
     suite = unittest.TestSuite()
-    for _ in xrange(10):
+    for _ in xrange(1):
         suite.addTest(CNNGradientTestCase(activation, loss_type))
         # suite.addTest(MLPGradientTestCase(activation, loss_type))
     return suite
@@ -88,6 +88,6 @@ def suite(activation, loss_type):
 if __name__ == "__main__":
     runner = unittest.TextTestRunner()
     runner.run(suite('tanh', 'mse'))
-    runner.run(suite('sigmoid', 'mse'))
-    runner.run(suite('tanh', 'softmax'))
-    runner.run(suite('sigmoid', 'softmax'))
+#    runner.run(suite('sigmoid', 'mse'))
+#    runner.run(suite('tanh', 'softmax'))
+#    runner.run(suite('sigmoid', 'softmax'))
