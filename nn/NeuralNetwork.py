@@ -5,8 +5,11 @@ import gflags
 import datetime
 import util
 
+FLAGS = gflags.FLAGS
+
 gflags.DEFINE_integer('batch_report_sec', 60, 'report batch loss every n seconds')
 gflags.DEFINE_string('dump_prefix', 'theta', 'prefix of dump filename')
+gflags.DEFINE_bool('one_batch', False, 'if train only one batch(for testing)')
 
 class NeuralNetwork(object):
     def __init__(self, activation, loss_type):
@@ -44,9 +47,10 @@ class NeuralNetwork(object):
     def fit(self, X_train, y_train, n_epochs, batch_size, lr):
         logging.info('start fitting')
         N = len(X_train)
-        batch_n = N / batch_size + 1
-        if (batch_n-1) * batch_size >= N:
-            batch_n = batch_n - 1
+        if N % batch_size:
+            batch_n = N / batch_size
+        else:
+            batch_n = N / batch_size + 1
 
         for epoch in xrange(n_epochs):
             epoch_loss = 0.0
@@ -62,8 +66,11 @@ class NeuralNetwork(object):
                                  (epoch, batch, epoch_loss/end))
                     end_time = datetime.datetime.now() + \
                         datetime.timedelta(0, gflags.FLAGS.batch_report_sec)
+                if FLAGS.one_batch:
+                    break
 
             logging.info('Epoch %d Loss %lf' % (epoch, epoch_loss/N))
+            self.dump('%s-epoch-%d' % (FLAGS.dump_prefix, epoch))
 
     def test_fit(self, X_train, y_train, n_epochs, batch_size, lr):
         X_train = X_train[:batch_size]
@@ -111,9 +118,23 @@ class NeuralNetwork(object):
         outputs = self.output(X_test)
         return self.loss_func(y_test, outputs)
 
-    def test(self, X_test, y_test):
-        logging.info('Start testing: len %d' % (len(X_test)))
-        outputs = self.output(X_test)
+    def test(self, X_test, y_test, batch_size=128):
+        N = len(X_test)
+        logging.info('Start testing: len %d batch_size %d' % (N, batch_size))
+        outputs = []
+        if N % batch_size:
+            batch_n = N / batch_size
+        else:
+            batch_n = N / batch_size + 1
+        for batch in xrange(batch_n):
+            end = min((batch + 1) * batch_size, N)
+            outputs.append(self.output(X_test[:end]))
+            if FLAGS.one_batch and batch_n != 0:
+                # We test 2 batches
+                y_test = y_test[:end]
+                break
+        logging.info('Done forward.')
+        outputs = np.concatenate(outputs)
         y_true = np.argmax(y_test, axis=1)
         y_pred = np.argmax(outputs, axis=1)
         from sklearn.metrics import confusion_matrix, accuracy_score
@@ -143,6 +164,7 @@ class NeuralNetwork(object):
                 param = getattr(layer, param_name)
                 theta['%d_%s' % (layer_ind, param_name)] = param
         np.savez(open(fname, 'wb'), **theta)
+        logging.info('Model dumped to %s' % fname)
 
     def load(self, fname):
         theta = np.load(fname)
