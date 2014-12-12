@@ -11,7 +11,7 @@ gflags.DEFINE_string('loss_type', 'softmax', 'final loss type(mse or softmax)')
 gflags.DEFINE_string('activation', 'tanh', 'activation function')
 # train
 gflags.DEFINE_integer('epoch', 50, 'Epoch number')
-gflags.DEFINE_integer('batch', 100, 'batch size')
+gflags.DEFINE_integer('batch', 128, 'batch size')
 # data
 gflags.DEFINE_string('datapath', '../database/', 'path to CIFAR-10 data')
 
