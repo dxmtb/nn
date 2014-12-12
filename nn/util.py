@@ -16,7 +16,7 @@ def FLOAT():
 def normal(size, bound):
     '''Initialize a matrix shared variable with normally distributed
 elements.'''
-    return np.random.normal(low=-bound, high=bound, size=size).astype(FLOAT())
+    return np.random.normal(bound, size=size).astype(FLOAT())
 
 
 def zeros(shape):
