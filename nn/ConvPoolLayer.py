@@ -84,8 +84,8 @@ def conv2d_func(image_shape, filter_shape, mode):
     conv_out = theano.tensor.nnet.conv2d(
         input=inputs,
         filters=filters,
-#        filter_shape=filter_shape[2:],
-#        image_shape=image_shape,
+        filter_shape=filter_shape,
+        image_shape=image_shape,
         border_mode=mode
     )
     func = theano.function([inputs, filters], conv_out)
@@ -102,7 +102,7 @@ class ConvPoolLayer(object):
         """
         Allocate a LeNetConvPoolLayer with shared variable internal parameters.
 
-        image_shape: (height, width)
+        image_shape: (batch_size, # of input feature_maps, height, width)
 
         :type filter_shape: tuple or list of length 4
         :param filter_shape: (number of output filters, num input feature maps,
@@ -122,25 +122,36 @@ class ConvPoolLayer(object):
         self.grad_activation = grad_activation
         self.poolsize = poolsize
         self.filter_shape = filter_shape
-        self.output_shape = ((image_shape[0] - filter_shape[2] + 1) / poolsize[0],
-                             (image_shape[1] - filter_shape[3] + 1) / poolsize[1])
+        self.output_shape = (image_shape[0], filter_shape[0],
+                             (image_shape[2] - filter_shape[2] + 1) / poolsize[0],
+                             (image_shape[3] - filter_shape[3] + 1) / poolsize[1])
         if FLAGS.theano_conv:
-            self._conv2d_valid = conv2d_func(image_shape, filter_shape, 'valid')
-            self._conv2d_full = conv2d_func(image_shape, filter_shape, 'full')
+            self._conv2d_activate_valid = conv2d_func(image_shape, filter_shape, 'valid')
+            self._conv2d_grad_valid = conv2d_func(
+                (image_shape[1], image_shape[0], image_shape[2], image_shape[3]),
+                (filter_shape[0], image_shape[0],
+                 image_shape[2] - filter_shape[2] + 1,
+                 image_shape[3] - filter_shape[3] + 1), 'valid')
+            self._conv2d_full = conv2d_func(
+                (image_shape[0], filter_shape[0],
+                 image_shape[2] - filter_shape[2] + 1,
+                 image_shape[3] - filter_shape[3] + 1),
+                (filter_shape[1], filter_shape[0], filter_shape[2], filter_shape[3]),
+                'full')
 
         self.params = ['W', 'b']
 
     def do_pooling(self, after_filter, poolsize):
-        import time
-        t1 = time.time()
         ret = ct_do_pooling(after_filter, poolsize)
-        t2 = time.time()
-        # print t2 - t1, after_filter.shape
         return ret
 
-    def conv2d_valid(self, *args):
+    def conv2d_activate_valid(self, *args):
         # wrap for profiling
-        return self._conv2d_valid(*args)
+        return self._conv2d_activate_valid(*args)
+
+    def conv2d_grad_valid(self, *args):
+        # wrap for profiling
+        return self._conv2d_grad_valid(*args)
 
     def conv2d_full(self, *args):
         # wrap for profiling
@@ -164,7 +175,7 @@ class ConvPoolLayer(object):
 
         # do convolve2d
         if FLAGS.theano_conv:
-            after_filter = self.conv2d_valid(feature_maps, rot90(W))
+            after_filter = self.conv2d_activate_valid(feature_maps, rot90(W))
         else:
             after_filter = util.zeros((batch_size, n_output, n_height, n_width))
             for index in np.ndindex(batch_size, n_output):
@@ -233,7 +244,7 @@ class ConvPoolLayer(object):
             # (p, i, :, :) (q, i, :, :)
             # (p, q, :, :)
             rot_error_output = rot90(error_output)
-            W_grad = self.conv2d_valid(np.swapaxes(input, 0, 1), np.swapaxes(rot_error_output, 0, 1))
+            W_grad = self.conv2d_grad_valid(np.swapaxes(input, 0, 1), np.swapaxes(rot_error_output, 0, 1))
             W_grad = np.swapaxes(W_grad, 0, 1)
         else:
             W_grad = util.zeros(self.W.shape)

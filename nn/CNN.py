@@ -7,12 +7,12 @@ import logging
 
 
 class CNN(NeuralNetwork):
-    def __init__(self, out_dim, activation, loss_type, poolsize=(2, 2)):
+    def __init__(self, out_dim, activation, loss_type, batch_size, poolsize=(2, 2)):
         NeuralNetwork.__init__(self, activation, loss_type)
 
         args = [self.activation, self.grad_activation]
 
-        image_shape = (32, 32)
+        image_shape = (batch_size, 3, 32, 32)
         filter_num = 64
 
         self.layers = []
@@ -29,7 +29,7 @@ class CNN(NeuralNetwork):
 
         # (32-5+1)/2 = 14
         # (14-5+1)/2 = 5
-        dim = np.prod(self.layers[-1].output_shape) * filter_num
+        dim = np.prod(self.layers[-1].output_shape[1:])
 
         # logging.info('Output dim to FC %d' % dim)
 
