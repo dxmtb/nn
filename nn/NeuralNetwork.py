@@ -128,7 +128,9 @@ class NeuralNetwork(object):
         outputs = self.output(X_test)
         return self.loss_func(y_test, outputs)
 
-    def test(self, X_test, y_test, batch_size=128):
+    def test(self, X_test, y_test, batch_size=None):
+        if not batch_size:
+            batch_size = FLAGS.batch
         N = len(X_test)
         assert len(y_test) == N
         logging.info('Start testing: len %d batch_size %d' % (N, batch_size))
