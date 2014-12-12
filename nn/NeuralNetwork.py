@@ -10,7 +10,8 @@ FLAGS = gflags.FLAGS
 
 gflags.DEFINE_integer('batch_report_sec', 60, 'report batch loss every n seconds')
 gflags.DEFINE_string('dump_prefix', 'theta', 'prefix of dump filename')
-gflags.DEFINE_bool('one_batch', False, 'if train only one batch(for testing)')
+gflags.DEFINE_bool('train_one_batch', False, 'if train only one batch(for testing)')
+gflags.DEFINE_bool('test_one_batch', False, 'if test only one batch(for testing)')
 
 class NeuralNetwork(object):
     def __init__(self, activation, loss_type):
@@ -48,7 +49,7 @@ class NeuralNetwork(object):
     def fit(self, X_train, y_train, n_epochs, batch_size, lr):
         logging.info('start fitting')
         N = len(X_train)
-        if N % batch_size:
+        if N % batch_size == 0:
             batch_n = N / batch_size
         else:
             batch_n = N / batch_size + 1
@@ -70,7 +71,7 @@ class NeuralNetwork(object):
                                  (epoch, batch, epoch_loss/end))
                     end_time = datetime.datetime.now() + \
                         datetime.timedelta(0, gflags.FLAGS.batch_report_sec)
-                if FLAGS.one_batch:
+                if FLAGS.train_one_batch:
                     break
             t2 = time.time()
 
@@ -125,9 +126,10 @@ class NeuralNetwork(object):
 
     def test(self, X_test, y_test, batch_size=128):
         N = len(X_test)
+        assert len(y_test) == N
         logging.info('Start testing: len %d batch_size %d' % (N, batch_size))
         outputs = []
-        if N % batch_size:
+        if N % batch_size == 0:
             batch_n = N / batch_size
         else:
             batch_n = N / batch_size + 1
@@ -135,12 +137,12 @@ class NeuralNetwork(object):
             begin = batch * batch_size
             end = min((batch + 1) * batch_size, N)
             outputs.append(self.output(X_test[begin: end]))
-            if FLAGS.one_batch and batch_n != 0:
+            if FLAGS.test_one_batch and batch_n != 0:
                 # We test 2 batches
                 y_test = y_test[:end]
                 break
-        logging.info('Done forward.')
         outputs = np.concatenate(outputs)
+        logging.info('Done forward. Outputs: %d' % (len(outputs)))
         y_true = np.argmax(y_test, axis=1)
         y_pred = np.argmax(outputs, axis=1)
         assert len(y_true) == len(y_pred)
