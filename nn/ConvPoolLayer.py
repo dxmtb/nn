@@ -116,7 +116,7 @@ class ConvPoolLayer(object):
             fan_out = ((filter_shape[0] * np.prod(filter_shape[2:])) /
                        (np.prod(poolsize)))
             bound = np.sqrt(6.0 / (fan_in + fan_out))
-        self.W = util.uniform(filter_shape, bound)
+        self.W = util.normal(filter_shape, bound)
         self.b = util.zeros((filter_shape[0],))
         self.activation = activation
         self.grad_activation = grad_activation
