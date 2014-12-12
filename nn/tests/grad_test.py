@@ -88,9 +88,9 @@ def suite(activation, loss_type):
 
 if __name__ == "__main__":
     runner = unittest.TextTestRunner()
-    runner.run(suite('tanh', 'mse'))
-    runner.run(suite('sigmoid', 'mse'))
-    runner.run(suite('relu', 'mse'))
-    runner.run(suite('tanh', 'softmax'))
-    runner.run(suite('sigmoid', 'softmax'))
+#    runner.run(suite('tanh', 'mse'))
+#    runner.run(suite('sigmoid', 'mse'))
+#    runner.run(suite('relu', 'mse'))
+#    runner.run(suite('tanh', 'softmax'))
+#    runner.run(suite('sigmoid', 'softmax'))
     runner.run(suite('relu', 'softmax'))

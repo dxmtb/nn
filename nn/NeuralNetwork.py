@@ -10,6 +10,7 @@ FLAGS = gflags.FLAGS
 
 gflags.DEFINE_integer('batch_report_sec', 60, 'report batch loss every n seconds')
 gflags.DEFINE_string('dump_prefix', 'theta', 'prefix of dump filename')
+gflags.DEFINE_string('load_path', '', 'model to load for init')
 gflags.DEFINE_bool('train_one_batch', False, 'if train only one batch(for testing)')
 gflags.DEFINE_bool('test_one_batch', False, 'if test only one batch(for testing)')
 
@@ -47,6 +48,11 @@ class NeuralNetwork(object):
             raise NotImplementedError('Unknown loss type: ' + loss_type)
 
     def fit(self, X_train, y_train, n_epochs, batch_size, lr):
+        if len(FLAGS.load_path):
+            logging.info('loading model from %s' % FLAGS.load_path)
+            self.load(FLAGS.load_path)
+            logging.info('Load done.')
+
         logging.info('start fitting')
         N = len(X_train)
         if N % batch_size == 0:
@@ -67,7 +73,7 @@ class NeuralNetwork(object):
                 total += (end - start)
 
                 if datetime.datetime.now() > end_time:
-                    logging.info('Epoch %d Batch %d Avg loss %lf' % 
+                    logging.info('Epoch %d Batch %d Avg loss %lf' %
                                  (epoch, batch, epoch_loss/end))
                     end_time = datetime.datetime.now() + \
                         datetime.timedelta(0, gflags.FLAGS.batch_report_sec)
@@ -160,7 +166,7 @@ class NeuralNetwork(object):
 
         param = getattr(layer, param_name)
         param_grad = getattr(layer, param_name + '_grad')
-        
+
         ind = []
         for s in param.shape:
             ind.append(np.random.randint(s))
