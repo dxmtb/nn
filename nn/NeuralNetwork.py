@@ -132,8 +132,9 @@ class NeuralNetwork(object):
         else:
             batch_n = N / batch_size + 1
         for batch in xrange(batch_n):
+            begin = batch * batch_size
             end = min((batch + 1) * batch_size, N)
-            outputs.append(self.output(X_test[:end]))
+            outputs.append(self.output(X_test[begin: end]))
             if FLAGS.one_batch and batch_n != 0:
                 # We test 2 batches
                 y_test = y_test[:end]
@@ -142,6 +143,8 @@ class NeuralNetwork(object):
         outputs = np.concatenate(outputs)
         y_true = np.argmax(y_test, axis=1)
         y_pred = np.argmax(outputs, axis=1)
+        assert len(y_true) == len(y_pred)
+        logging.info('%d tested.' % len(y_true))
         from sklearn.metrics import confusion_matrix, accuracy_score
         return accuracy_score(y_true, y_pred), confusion_matrix(y_true, y_pred)
 
