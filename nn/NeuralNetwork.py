@@ -55,10 +55,8 @@ class NeuralNetwork(object):
 
         logging.info('start fitting')
         N = len(X_train)
-        if N % batch_size == 0:
-            batch_n = N / batch_size
-        else:
-            batch_n = N / batch_size + 1
+        assert N % batch_size == 0
+        batch_n = N / batch_size
 
         for epoch in xrange(n_epochs):
             epoch_loss = 0.0
@@ -67,7 +65,7 @@ class NeuralNetwork(object):
             t1 = time.time()
             for batch in xrange(batch_n):
                 start = batch * batch_size
-                end = min((batch + 1) * batch_size, len(X_train))
+                end = (batch + 1) * batch_size
                 batch_loss = self.train_batch(X_train[start: end], y_train[start: end], lr)
                 epoch_loss += batch_loss * (end - start)
                 total += (end - start)
@@ -135,13 +133,11 @@ class NeuralNetwork(object):
         assert len(y_test) == N
         logging.info('Start testing: len %d batch_size %d' % (N, batch_size))
         outputs = []
-        if N % batch_size == 0:
-            batch_n = N / batch_size
-        else:
-            batch_n = N / batch_size + 1
+        assert N % batch_size == 0
+        batch_n = N / batch_size
         for batch in xrange(batch_n):
             begin = batch * batch_size
-            end = min((batch + 1) * batch_size, N)
+            end = (batch + 1) * batch_size
             outputs.append(self.output(X_test[begin: end]))
             if FLAGS.test_one_batch and batch_n != 0:
                 # We test 2 batches
