@@ -242,8 +242,8 @@ class ConvPoolLayer(object):
 
         b_grad = np.sum(error_output, axis=(0, 2, 3))
 
-        self.W_grad = W_grad
-        self.b_grad = b_grad
+        self.W_grad = W_grad / input.shape[0]
+        self.b_grad = b_grad / input.shape[0]
 
     def do_update(self, learning_rate):
         self.W -= learning_rate * self.W_grad

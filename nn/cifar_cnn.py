@@ -2,7 +2,7 @@ from CNN import CNN
 from util import load_CIFAR_batches
 
 import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[%(lineno)d] %(levelname)s %(message)s', datefmt='%H:%M:%S')
 
 import gflags
 FLAGS = gflags.FLAGS
@@ -32,7 +32,7 @@ def main(argv):
     argv = FLAGS(argv)
     inputs, outputs = load_CIFAR_train(FLAGS.datapath)
     nn = CNN(10, FLAGS.activation, FLAGS.loss_type)
-    nn.fit(inputs, outputs, FLAGS.epoch, FLAGS.batch, 0.0001)
+    nn.fit(inputs, outputs, FLAGS.epoch, FLAGS.batch, 0.01)
     print nn.test(*load_CIFAR_test(FLAGS.datapath))
 
 

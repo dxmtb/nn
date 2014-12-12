@@ -37,8 +37,8 @@ class FullyConnectedLayer(object):
         input: (n_input, in_dim)
         W_grad: (in_dim, out_dim)
         """
-        self.W_grad = np.dot(np.transpose(input), error_output)
-        self.b_grad = np.sum(error_output, axis=0)
+        self.W_grad = np.dot(np.transpose(input), error_output) / input.shape[0]
+        self.b_grad = np.sum(error_output, axis=0) / input.shape[0]
 
     def do_update(self, learning_rate):
         self.W -= learning_rate * self.W_grad

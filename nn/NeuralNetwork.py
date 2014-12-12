@@ -3,6 +3,7 @@ import logging
 
 import gflags
 import datetime
+import time
 import util
 
 FLAGS = gflags.FLAGS
@@ -35,12 +36,12 @@ class NeuralNetwork(object):
                 np.multiply(outputs - std_outputs,
                             self.grad_activation(outputs))
             self.loss_func = lambda std_outputs, outputs: \
-                0.5 * np.sum((std_outputs-outputs)**2)
+                0.5 * np.sum((std_outputs-outputs)**2) / len(outputs)
         elif loss_type == 'softmax':
             self.error_last_layer = lambda std_outputs, outputs: \
                 (outputs - std_outputs)
             self.loss_func = lambda std_outputs, outputs: \
-                -(np.sum(np.multiply(std_outputs, np.log(outputs))))
+                -(np.sum(np.multiply(std_outputs, np.log(outputs)))) / len(outputs)
         else:
             raise NotImplementedError('Unknown loss type: ' + loss_type)
 
@@ -55,11 +56,14 @@ class NeuralNetwork(object):
         for epoch in xrange(n_epochs):
             epoch_loss = 0.0
             end_time = datetime.datetime.now()
+            total = 0 # in case one_batch
+            t1 = time.time()
             for batch in xrange(batch_n):
                 start = batch * batch_size
                 end = min((batch + 1) * batch_size, len(X_train))
                 batch_loss = self.train_batch(X_train[start: end], y_train[start: end], lr)
-                epoch_loss += batch_loss
+                epoch_loss += batch_loss * (end - start)
+                total += (end - start)
 
                 if datetime.datetime.now() > end_time:
                     logging.info('Epoch %d Batch %d Avg loss %lf' % 
@@ -68,8 +72,9 @@ class NeuralNetwork(object):
                         datetime.timedelta(0, gflags.FLAGS.batch_report_sec)
                 if FLAGS.one_batch:
                     break
+            t2 = time.time()
 
-            logging.info('Epoch %d Loss %lf' % (epoch, epoch_loss/N))
+            logging.info('Epoch %d Loss %lf Time elapsed %lf' % (epoch, epoch_loss/total, t2-t1))
             self.dump('%s-epoch-%d' % (FLAGS.dump_prefix, epoch))
 
     def test_fit(self, X_train, y_train, n_epochs, batch_size, lr):
@@ -80,7 +85,7 @@ class NeuralNetwork(object):
             batch_loss = self.train_batch(X_train, y_train, lr)
             logging.info('Epoch %d Loss %lf' % (epoch, batch_loss))
         print self.test(X_train, y_train)
-        
+
 
     def train_batch(self, X_train, y_train, lr, update=True):
         outputs = self.forward(X_train)

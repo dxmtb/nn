@@ -68,19 +68,20 @@ class CNNGradientTestCase(GradientTestCase):
         FLAGS.floatX = 'float64'
         out_dim = 10
         self.nn = CNN(10, self.activation, self.loss_type)
-        self.X_train = util.uniform((1, 3, 32, 32), 10.0)
+        self.X_train = util.uniform((10, 3, 32, 32), 10.0)
         if self.loss_type == 'softmax':
-            self.y_train = util.zeros((1, out_dim))
-            self.y_train[0][np.random.randint(out_dim)] = 1.0
+            self.y_train = util.zeros((10, out_dim))
+            for i in xrange(10):
+                self.y_train[i][np.random.randint(out_dim)] = 1.0
         else:
-            self.y_train = util.uniform((1, out_dim), 1.0)
+            self.y_train = util.uniform((10, out_dim), 1.0)
 
         self.X_train = self.X_train.astype(util.FLOAT())
         self.y_train = self.y_train.astype(util.FLOAT())
 
 def suite(activation, loss_type):
     suite = unittest.TestSuite()
-    for _ in xrange(1):
+    for _ in xrange(100):
         suite.addTest(CNNGradientTestCase(activation, loss_type))
         # suite.addTest(MLPGradientTestCase(activation, loss_type))
     return suite
@@ -88,6 +89,8 @@ def suite(activation, loss_type):
 if __name__ == "__main__":
     runner = unittest.TextTestRunner()
     runner.run(suite('tanh', 'mse'))
-#    runner.run(suite('sigmoid', 'mse'))
-#    runner.run(suite('tanh', 'softmax'))
-#    runner.run(suite('sigmoid', 'softmax'))
+    runner.run(suite('sigmoid', 'mse'))
+    runner.run(suite('relu', 'mse'))
+    runner.run(suite('tanh', 'softmax'))
+    runner.run(suite('sigmoid', 'softmax'))
+    runner.run(suite('relu', 'softmax'))
