@@ -56,7 +56,7 @@ class NeuralNetwork(object):
             self.load(FLAGS.load_path)
             logging.info('Load done.')
 
-        logging.info('start fitting epoch %d batchsize %d LR %f' % (n_epochs, batch_size, lr))
+        logging.info('start fitting epoch %d batchsize %d LR %s' % (n_epochs, batch_size, lr))
         N = len(X_train)
         assert N % batch_size == 0
         batch_n = N / batch_size

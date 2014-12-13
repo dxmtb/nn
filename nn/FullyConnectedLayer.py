@@ -43,8 +43,8 @@ class FullyConnectedLayer(object):
         self.W_grad = np.dot(np.transpose(input), error_output) / input.shape[0]
         self.b_grad = np.sum(error_output, axis=0) / input.shape[0]
 
-    def do_update(self, learning_rate, momentum=0.9, weight_decay=0.03):
-        for param in self.params:
+    def do_update(self, learning_rates, momentum=0.9, weight_decay=0.03):
+        for learning_rate, param in zip(learning_rates, self.params):
             p = getattr(self, param)
             p_inc = -learning_rate * getattr(self, param+'_grad') + \
                     momentum * getattr(self, param+'_inc_before')

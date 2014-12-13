@@ -32,7 +32,7 @@ def main(argv):
     argv = FLAGS(argv)
     inputs, outputs = load_CIFAR_train(FLAGS.datapath)
     nn = CNN(10, FLAGS.activation, FLAGS.loss_type, FLAGS.batch)
-    nn.fit(inputs, outputs, FLAGS.epoch, FLAGS.batch, 0.001)
+    nn.fit(inputs, outputs, FLAGS.epoch, FLAGS.batch, [0.001, 0.002])
     print nn.test(*load_CIFAR_test(FLAGS.datapath))
 
 
