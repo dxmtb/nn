@@ -57,3 +57,5 @@ target/
 database/
 
 .DS_Store
+
+*.model
