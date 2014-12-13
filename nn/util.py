@@ -18,6 +18,9 @@ def normal(size, bound):
 elements.'''
     return np.random.normal(0, bound, size=size).astype(FLOAT())
 
+def uniform(size, bound):
+    return np.random.uniform(-bound, bound, size=size).astype(FLOAT())
+
 
 def zeros(shape):
     '''Initialize a vector shared variable with zero elements.'''
