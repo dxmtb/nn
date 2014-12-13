@@ -16,7 +16,7 @@ class FullyConnectedLayer(object):
         self.b = util.zeros((out_dim,))
         self.activation = activation
         self.grad_activation = grad_activation
-        
+
         self.params = ['W', 'b']
 
     def activate(self, input):

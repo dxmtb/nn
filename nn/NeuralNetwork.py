@@ -80,7 +80,7 @@ class NeuralNetwork(object):
             t2 = time.time()
 
             logging.info('Epoch %d Loss %lf Time elapsed %lf' % (epoch, epoch_loss/total, t2-t1))
-            self.dump('%s-epoch-%d' % (FLAGS.dump_prefix, epoch))
+            self.dump('%s-epoch-%d.model' % (FLAGS.dump_prefix, epoch))
 
     def test_fit(self, X_train, y_train, n_epochs, batch_size, lr):
         X_train = X_train[:batch_size]
