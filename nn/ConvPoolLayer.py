@@ -280,9 +280,9 @@ class ConvPoolLayer(object):
     def do_update(self, learning_rate, momentum=0.9, weight_decay=0.004):
         for param in self.params:
             p = getattr(self, param)
-            p_inc = learning_rate * getattr(self, param+'_grad') + \
+            p_inc = -learning_rate * getattr(self, param+'_grad') + \
                     momentum * getattr(self, param+'_inc_before')
             if param != 'b':
-                p_inc += learning_rate * weight_decay * p
-            setattr(self, param, p - p_inc)
+                p_inc += -learning_rate * weight_decay * p
+            setattr(self, param, p + p_inc)
             setattr(self, param+'_inc_before', p_inc)
