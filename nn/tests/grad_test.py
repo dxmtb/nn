@@ -23,11 +23,9 @@ class GradientTestCase(unittest.TestCase):
         grad = mat_grad[ind]
 
         mat[ind] += EPSILON
-        nn.train_batch(X_train, y_train, lr=None, update=False)
         loss_plus = nn.loss(X_train, y_train)
 
         mat[ind] -= 2 * EPSILON
-        nn.train_batch(X_train, y_train, lr=None, update=False)
         loss_minus = nn.loss(X_train, y_train)
 
         real_grad = (loss_plus - loss_minus) / (2 * EPSILON)
