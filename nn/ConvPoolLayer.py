@@ -111,9 +111,8 @@ def conv2d_func(image_shape, filter_shape, mode):
     return func
 
 def rot90(tensor):
-    ret = util.zeros(tensor.shape)
-    for i, j in np.ndindex(tensor.shape[:2]):
-        ret[i][j] = np.rot90(tensor[i][j], 2)
+    assert len(tensor.shape) == 4
+    ret = tensor[:,:,::-1,::-1]
     return ret
 
 class ConvPoolLayer(object):
