@@ -9,6 +9,7 @@ import util
 FLAGS = gflags.FLAGS
 
 gflags.DEFINE_integer('batch_report_sec', 60, 'report batch loss every n seconds')
+gflags.DEFINE_integer('test_every_n_epoch', 1, 'number of epoch between testing')
 gflags.DEFINE_string('dump_prefix', 'theta', 'prefix of dump filename')
 gflags.DEFINE_string('load_path', '', 'model to load for init')
 gflags.DEFINE_bool('train_one_batch', False, 'if train only one batch(for testing)')
@@ -33,6 +34,8 @@ class NeuralNetwork(object):
             raise NotImplementedError('Unknown activation function: ' +
                                       activation)
 
+        logging.info('Activation %s loss type %s' % (activation, loss_type))
+
         if loss_type == 'mse':
             self.error_last_layer = lambda std_outputs, outputs: \
                 np.multiply(outputs - std_outputs,
@@ -53,7 +56,7 @@ class NeuralNetwork(object):
             self.load(FLAGS.load_path)
             logging.info('Load done.')
 
-        logging.info('start fitting')
+        logging.info('start fitting epoch %d batchsize %d LR %f' % (n_epochs, batch_size, lr))
         N = len(X_train)
         assert N % batch_size == 0
         batch_n = N / batch_size

@@ -11,8 +11,9 @@ class FullyConnectedLayer(object):
         b: (out_dim)
         output: (n_input, out_dim)
         """
-        bound = np.sqrt(6.0 / (in_dim + out_dim))
-        self.W = util.normal((in_dim, out_dim), bound)
+        # bound = np.sqrt(6.0 / (in_dim + out_dim))
+        bound = 0.001
+        self.W = util.uniform((in_dim, out_dim), bound)
         self.b = util.zeros((out_dim,))
         self.activation = activation
         self.grad_activation = grad_activation
