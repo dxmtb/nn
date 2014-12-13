@@ -67,7 +67,7 @@ class CNNGradientTestCase(GradientTestCase):
     def setUp(self):
         FLAGS.floatX = 'float64'
         out_dim = 10
-        self.nn = CNN(10, self.activation, self.loss_type)
+        self.nn = CNN(10, self.activation, self.loss_type, 10)
         self.X_train = util.uniform((10, 3, 32, 32), 10.0)
         if self.loss_type == 'softmax':
             self.y_train = util.zeros((10, out_dim))
@@ -81,7 +81,7 @@ class CNNGradientTestCase(GradientTestCase):
 
 def suite(activation, loss_type):
     suite = unittest.TestSuite()
-    for _ in xrange(100):
+    for _ in xrange(10):
         suite.addTest(CNNGradientTestCase(activation, loss_type))
         # suite.addTest(MLPGradientTestCase(activation, loss_type))
     return suite

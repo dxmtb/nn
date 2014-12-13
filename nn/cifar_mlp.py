@@ -8,7 +8,7 @@ import gflags
 FLAGS = gflags.FLAGS
 # model
 gflags.DEFINE_integer('hidden_dim', 500, 'hidden dim')
-gflags.DEFINE_string('loss_type', 'mse', 'final loss type(mse or softmax)')
+gflags.DEFINE_string('loss_type', 'softmax', 'final loss type(mse or softmax)')
 gflags.DEFINE_integer('layer_num', 0, 'additional layer number')
 gflags.DEFINE_string('activation', 'tanh', 'activation function')
 # train

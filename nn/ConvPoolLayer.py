@@ -66,6 +66,25 @@ def ct_do_pooling(after_filter, poolsize):
                     M.ctypes.data_as(ct.c_void_p))
     return M, ret
 
+def ct_upsample(error_before_pooling, error_output, pool_h, pool_w):
+    batch_size, n_output, n_height, n_width = error_before_pooling.shape
+    ret_h = int(float(n_height) / pool_h)
+    ret_w = int(float(n_width) / pool_w)
+    assert error_before_pooling.flags['C_CONTIGUOUS']
+    assert error_output.flags['C_CONTIGUOUS']
+    assert error_before_pooling.dtype == error_output.dtype
+    _DLL.upsample(ct.c_int(error_before_pooling.itemsize),
+                  ct.c_int(batch_size),
+                  ct.c_int(n_output),
+                  ct.c_int(n_height),
+                  ct.c_int(n_width),
+                  ct.c_int(pool_h),
+                  ct.c_int(pool_w),
+                  ct.c_int(ret_h),
+                  ct.c_int(ret_w),
+                  error_before_pooling.ctypes.data_as(ct.c_void_p),
+                  error_output.ctypes.data_as(ct.c_void_p))
+
 def conv_valid(*args):
     return scipy.signal.convolve2d(*args, mode='valid')
 
@@ -233,7 +252,8 @@ class ConvPoolLayer(object):
         import time
         pool_h, pool_w = self.poolsize
         error_before_pooling = np.copy(self.M)
-        upsample(error_before_pooling, error_output, pool_h, pool_w)
+        #upsample(error_before_pooling, error_output, pool_h, pool_w)
+        ct_upsample(error_before_pooling, error_output, pool_h, pool_w)
 
         error_output = error_before_pooling
         self.error_before_pooling = error_before_pooling

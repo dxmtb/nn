@@ -39,6 +39,26 @@ inline void _do_pooling(int batch_size, int n_output, int n_height, int n_width,
     }
 }
 
+template <typename T>
+inline void _upsample(int batch_size, int n_output, int n_height, int n_width,
+                      int pool_h, int pool_w, int ret_h, int ret_w,
+                      T *error_before_pooling, const T *error_output) {
+  for (int n = 0; n < batch_size; n++)
+    for (int c = 0; c < n_output; c++) {
+      T *before_output = error_before_pooling + (n * n_output + c) * n_height * n_width;
+      const T *error_before_output = error_output + (n * n_output + c) * ret_h * ret_w;
+      for (int ph = 0; ph < n_height; ph++) {
+        T *before_output_pixel = before_output + ph * n_width;
+        const T *error_output_now = error_before_output + ph / pool_h * ret_w;
+        for (int pw = 0; pw < n_width; pw++) {
+          T *now = before_output_pixel + pw;
+          if (*now == 1.0)
+            *now = *(error_output_now + pw/pool_w);
+        }
+      }
+    }
+}
+
 extern "C" {
   void do_pooling(int len, int batch_size, int n_output, int n_height, int n_width,
                   int pool_h, int pool_w, int ret_h, int ret_w,
@@ -55,6 +75,28 @@ extern "C" {
                             pool_h, pool_w, ret_h, ret_w,
                             (const double*)after_filter,
                             (double*)ret, (double*)M);
+        break;
+      default:
+        fprintf(stderr, "Unknown len: %d\n", len);
+        exit(1);
+    }
+  }
+}
+
+extern "C" {
+  void upsample(int len, int batch_size, int n_output, int n_height, int n_width,
+                  int pool_h, int pool_w, int ret_h, int ret_w,
+                  void *error_before_pooling, const void *error_output) {
+    switch(len) {
+      case sizeof(float):
+        _upsample<float>(batch_size, n_output, n_height, n_width,
+                           pool_h, pool_w, ret_h, ret_w,
+                           (float*) error_before_pooling, (const float*)error_output);
+        break;
+      case sizeof(double):
+        _upsample<double>(batch_size, n_output, n_height, n_width,
+                           pool_h, pool_w, ret_h, ret_w,
+                           (double*) error_before_pooling, (const double*)error_output);
         break;
       default:
         fprintf(stderr, "Unknown len: %d\n", len);
