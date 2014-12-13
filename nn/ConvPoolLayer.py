@@ -158,6 +158,8 @@ class ConvPoolLayer(object):
                 'full')
 
         self.params = ['W', 'b']
+        self.W_inc_before = util.zeros(self.W.shape)
+        self.b_inc_before = util.zeros(self.b.shape)
 
     def do_pooling(self, after_filter, poolsize):
         ret = ct_do_pooling(after_filter, poolsize)
@@ -275,6 +277,12 @@ class ConvPoolLayer(object):
         self.W_grad = W_grad / input.shape[0]
         self.b_grad = b_grad / input.shape[0]
 
-    def do_update(self, learning_rate):
-        self.W -= learning_rate * self.W_grad
-        self.b -= learning_rate * self.b_grad
+    def do_update(self, learning_rate, momentum=0.9, weight_decay=0.004):
+        for param in self.params:
+            p = getattr(self, param)
+            p_inc = learning_rate * getattr(self, param+'_grad') + \
+                    momentum * getattr(self, param+'_inc_before')
+            if param != 'b':
+                p_inc += learning_rate * weight_decay * p
+            setattr(self, param, p - p_inc)
+            setattr(self, param+'_inc_before', p_inc)
