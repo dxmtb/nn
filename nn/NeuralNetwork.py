@@ -10,7 +10,7 @@ FLAGS = gflags.FLAGS
 
 gflags.DEFINE_integer('batch_report_sec', 60, 'report batch loss every n seconds')
 gflags.DEFINE_integer('test_every_n_epoch', 1, 'number of epoch between testing')
-gflags.DEFINE_string('dump_prefix', 'theta', 'prefix of dump filename')
+gflags.DEFINE_string('dump_prefix', '', 'prefix of dump filename')
 gflags.DEFINE_string('load_path', '', 'model to load for init')
 gflags.DEFINE_bool('train_one_batch', False, 'if train only one batch(for testing)')
 gflags.DEFINE_bool('test_one_batch', False, 'if test only one batch(for testing)')
