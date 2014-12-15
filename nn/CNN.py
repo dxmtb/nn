@@ -16,16 +16,16 @@ class CNN(NeuralNetwork):
         filter_num = 32
 
         self.layers = []
-        bound = [None, None]
-        if activation == 'relu':
-            bound = [0.0001, 0.0001]
+#        bound = [None, None]
+#        if activation == 'relu':
+        bound = [0.0001, 0.0001]
 
         self.layers.append(ConvPoolLayer(image_shape,
                                          (filter_num, 3, 5, 5),
-                                         (3, 3), bound[0], *args))
+                                         (2, 2), bound[0], *args))
         self.layers.append(ConvPoolLayer(self.layers[-1].output_shape,
                                          (filter_num, filter_num, 5, 5),
-                                         (3, 3), bound[1], *args))
+                                         (2, 2), bound[1], *args))
 
         for layer in self.layers:
             logging.info("Layer output: %s" % (str(layer.output_shape)))

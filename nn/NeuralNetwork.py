@@ -50,7 +50,8 @@ class NeuralNetwork(object):
         else:
             raise NotImplementedError('Unknown loss type: ' + loss_type)
 
-    def fit(self, X_train, y_train, n_epochs, batch_size, lr):
+    def fit(self, X_train, y_train, n_epochs, batch_size, lr,
+            X_valid=None, y_valid=None):
         if len(FLAGS.load_path):
             logging.info('loading model from %s' % FLAGS.load_path)
             self.load(FLAGS.load_path)
@@ -83,7 +84,15 @@ class NeuralNetwork(object):
             t2 = time.time()
 
             logging.info('Epoch %d Loss %lf Time elapsed %lf' % (epoch, epoch_loss/total, t2-t1))
-            self.dump('%s-epoch-%d.model' % (FLAGS.dump_prefix, epoch))
+            if np.isinf(epoch_loss) or np.isnan(epoch_loss):
+                break
+            if len(FLAGS.dump_prefix):
+                self.dump('%s-epoch-%d.model' % (FLAGS.dump_prefix, epoch))
+
+            if epoch % FLAGS.test_every_n_epoch == 0 and not X_valid is None:
+                logging.info('Testing...')
+                logging.info('Accuracy: %f' % (self.test(X_valid, y_valid, batch_size)[0]))
+
 
     def test_fit(self, X_train, y_train, n_epochs, batch_size, lr):
         X_train = X_train[:batch_size]

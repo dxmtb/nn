@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -fPIC -O3 -Wall -ffast-math -msse -msse2
-LINKFLAGS = -shared -Wl
+LINKFLAGS = -shared
 INPUT = pooling.cpp
 TARGET = pooling.so
 

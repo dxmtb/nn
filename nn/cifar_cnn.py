@@ -10,7 +10,7 @@ FLAGS = gflags.FLAGS
 gflags.DEFINE_string('loss_type', 'softmax', 'final loss type(mse or softmax)')
 gflags.DEFINE_string('activation', 'relu', 'activation function')
 # train
-gflags.DEFINE_integer('epoch', 50, 'Epoch number')
+gflags.DEFINE_integer('epoch', 10, 'Epoch number')
 gflags.DEFINE_integer('batch', 100, 'batch size')
 # data
 gflags.DEFINE_string('datapath', '../database/', 'path to CIFAR-10 data')
@@ -32,7 +32,7 @@ def main(argv):
     argv = FLAGS(argv)
     inputs, outputs = load_CIFAR_train(FLAGS.datapath)
     nn = CNN(10, FLAGS.activation, FLAGS.loss_type, FLAGS.batch)
-    nn.fit(inputs, outputs, FLAGS.epoch, FLAGS.batch, [0.001, 0.002])
+    nn.fit(inputs, outputs, FLAGS.epoch, FLAGS.batch, [0.00001, 0.00002])
     print nn.test(*load_CIFAR_test(FLAGS.datapath))
 
 
