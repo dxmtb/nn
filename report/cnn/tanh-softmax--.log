@@ -1,0 +1,952 @@
+02:05:14 NeuralNetwork.py[37] INFO Activation tanh loss type softmax
+INFO (theano.gof.compilelock): Waiting for existing lock by process '28629' (I am process '28626')
+02:05:14 compilelock.py[223] INFO Waiting for existing lock by process '28629' (I am process '28626')
+INFO (theano.gof.compilelock): To manually release the lock, delete /home/tianbo/.theano/compiledir_Linux-2.6.32-71.el6.x86_64-x86_64-with-centos-6.0-Final-x86_64-2.7.6-64/lock_dir
+02:05:14 compilelock.py[225] INFO To manually release the lock, delete /home/tianbo/.theano/compiledir_Linux-2.6.32-71.el6.x86_64-x86_64-with-centos-6.0-Final-x86_64-2.7.6-64/lock_dir
+02:05:22 CNN.py[31] INFO Layer output: (100, 32, 14, 14)
+02:05:22 CNN.py[31] INFO Layer output: (100, 32, 5, 5)
+02:05:22 CNN.py[36] INFO Output to FC: 800
+02:05:22 NeuralNetwork.py[60] INFO start fitting epoch 100 batchsize 100 LR [0.0001, 0.0002]
+02:05:23 NeuralNetwork.py[79] INFO Epoch 0 Batch 0 Avg loss 2.302586
+02:06:23 NeuralNetwork.py[79] INFO Epoch 0 Batch 73 Avg loss 2.302587
+02:07:24 NeuralNetwork.py[79] INFO Epoch 0 Batch 144 Avg loss 2.302585
+02:08:24 NeuralNetwork.py[79] INFO Epoch 0 Batch 216 Avg loss 2.302586
+02:09:24 NeuralNetwork.py[79] INFO Epoch 0 Batch 286 Avg loss 2.302590
+02:10:24 NeuralNetwork.py[79] INFO Epoch 0 Batch 356 Avg loss 2.302591
+02:11:25 NeuralNetwork.py[79] INFO Epoch 0 Batch 429 Avg loss 2.302590
+02:12:23 NeuralNetwork.py[86] INFO Epoch 0 Loss 2.302590 Time elapsed 420.549354
+02:12:23 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-0.model
+02:12:24 NeuralNetwork.py[79] INFO Epoch 1 Batch 0 Avg loss 2.302589
+02:13:24 NeuralNetwork.py[79] INFO Epoch 1 Batch 72 Avg loss 2.302577
+02:14:25 NeuralNetwork.py[79] INFO Epoch 1 Batch 144 Avg loss 2.302574
+02:15:25 NeuralNetwork.py[79] INFO Epoch 1 Batch 216 Avg loss 2.302573
+02:16:25 NeuralNetwork.py[79] INFO Epoch 1 Batch 288 Avg loss 2.302575
+02:17:26 NeuralNetwork.py[79] INFO Epoch 1 Batch 360 Avg loss 2.302571
+02:18:27 NeuralNetwork.py[79] INFO Epoch 1 Batch 432 Avg loss 2.302566
+02:19:23 NeuralNetwork.py[86] INFO Epoch 1 Loss 2.302560 Time elapsed 419.747515
+02:19:23 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-1.model
+02:19:24 NeuralNetwork.py[79] INFO Epoch 2 Batch 0 Avg loss 2.302650
+02:20:25 NeuralNetwork.py[79] INFO Epoch 2 Batch 72 Avg loss 2.302481
+02:21:25 NeuralNetwork.py[79] INFO Epoch 2 Batch 144 Avg loss 2.302446
+02:22:26 NeuralNetwork.py[79] INFO Epoch 2 Batch 216 Avg loss 2.302409
+02:23:26 NeuralNetwork.py[79] INFO Epoch 2 Batch 288 Avg loss 2.302341
+02:24:27 NeuralNetwork.py[79] INFO Epoch 2 Batch 360 Avg loss 2.302169
+02:25:27 NeuralNetwork.py[79] INFO Epoch 2 Batch 432 Avg loss 2.301698
+02:26:24 NeuralNetwork.py[86] INFO Epoch 2 Loss 2.300266 Time elapsed 420.911409
+02:26:24 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-2.model
+02:26:25 NeuralNetwork.py[79] INFO Epoch 3 Batch 0 Avg loss 2.291463
+02:27:26 NeuralNetwork.py[79] INFO Epoch 3 Batch 72 Avg loss 2.252068
+02:28:26 NeuralNetwork.py[79] INFO Epoch 3 Batch 143 Avg loss 2.209360
+02:29:27 NeuralNetwork.py[79] INFO Epoch 3 Batch 214 Avg loss 2.181293
+02:30:27 NeuralNetwork.py[79] INFO Epoch 3 Batch 284 Avg loss 2.159213
+02:31:28 NeuralNetwork.py[79] INFO Epoch 3 Batch 355 Avg loss 2.141845
+02:32:28 NeuralNetwork.py[79] INFO Epoch 3 Batch 426 Avg loss 2.129005
+02:33:29 NeuralNetwork.py[79] INFO Epoch 3 Batch 497 Avg loss 2.118107
+02:33:31 NeuralNetwork.py[86] INFO Epoch 3 Loss 2.117833 Time elapsed 426.932948
+02:33:31 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-3.model
+02:33:32 NeuralNetwork.py[79] INFO Epoch 4 Batch 0 Avg loss 2.148231
+02:34:33 NeuralNetwork.py[79] INFO Epoch 4 Batch 70 Avg loss 2.038264
+02:35:33 NeuralNetwork.py[79] INFO Epoch 4 Batch 140 Avg loss 2.035842
+02:36:33 NeuralNetwork.py[79] INFO Epoch 4 Batch 210 Avg loss 2.035402
+02:37:33 NeuralNetwork.py[79] INFO Epoch 4 Batch 280 Avg loss 2.027104
+02:38:33 NeuralNetwork.py[79] INFO Epoch 4 Batch 350 Avg loss 2.020551
+02:39:34 NeuralNetwork.py[79] INFO Epoch 4 Batch 420 Avg loss 2.014832
+02:40:34 NeuralNetwork.py[79] INFO Epoch 4 Batch 490 Avg loss 2.008647
+02:40:42 NeuralNetwork.py[86] INFO Epoch 4 Loss 2.007610 Time elapsed 430.938647
+02:40:42 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-4.model
+02:40:43 NeuralNetwork.py[79] INFO Epoch 5 Batch 0 Avg loss 2.030729
+02:41:44 NeuralNetwork.py[79] INFO Epoch 5 Batch 70 Avg loss 1.955703
+02:42:45 NeuralNetwork.py[79] INFO Epoch 5 Batch 140 Avg loss 1.956927
+02:43:45 NeuralNetwork.py[79] INFO Epoch 5 Batch 210 Avg loss 1.955235
+02:44:45 NeuralNetwork.py[79] INFO Epoch 5 Batch 280 Avg loss 1.945445
+02:45:45 NeuralNetwork.py[79] INFO Epoch 5 Batch 350 Avg loss 1.938520
+02:46:45 NeuralNetwork.py[79] INFO Epoch 5 Batch 420 Avg loss 1.932779
+02:47:46 NeuralNetwork.py[79] INFO Epoch 5 Batch 490 Avg loss 1.926054
+02:47:54 NeuralNetwork.py[86] INFO Epoch 5 Loss 1.924907 Time elapsed 431.608037
+02:47:54 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-5.model
+02:47:55 NeuralNetwork.py[79] INFO Epoch 6 Batch 0 Avg loss 1.913018
+02:48:55 NeuralNetwork.py[79] INFO Epoch 6 Batch 70 Avg loss 1.867003
+02:49:55 NeuralNetwork.py[79] INFO Epoch 6 Batch 140 Avg loss 1.867096
+02:50:55 NeuralNetwork.py[79] INFO Epoch 6 Batch 210 Avg loss 1.863970
+02:51:56 NeuralNetwork.py[79] INFO Epoch 6 Batch 280 Avg loss 1.853593
+02:52:56 NeuralNetwork.py[79] INFO Epoch 6 Batch 350 Avg loss 1.848399
+02:53:56 NeuralNetwork.py[79] INFO Epoch 6 Batch 420 Avg loss 1.844344
+02:54:56 NeuralNetwork.py[79] INFO Epoch 6 Batch 490 Avg loss 1.839302
+02:55:04 NeuralNetwork.py[86] INFO Epoch 6 Loss 1.838410 Time elapsed 430.229621
+02:55:04 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-6.model
+02:55:05 NeuralNetwork.py[79] INFO Epoch 7 Batch 0 Avg loss 1.839068
+02:56:05 NeuralNetwork.py[79] INFO Epoch 7 Batch 70 Avg loss 1.788139
+02:57:05 NeuralNetwork.py[79] INFO Epoch 7 Batch 140 Avg loss 1.791111
+02:58:06 NeuralNetwork.py[79] INFO Epoch 7 Batch 211 Avg loss 1.790365
+02:59:07 NeuralNetwork.py[79] INFO Epoch 7 Batch 281 Avg loss 1.781191
+03:00:07 NeuralNetwork.py[79] INFO Epoch 7 Batch 351 Avg loss 1.776577
+03:01:07 NeuralNetwork.py[79] INFO Epoch 7 Batch 421 Avg loss 1.773946
+03:02:07 NeuralNetwork.py[79] INFO Epoch 7 Batch 491 Avg loss 1.771131
+03:02:14 NeuralNetwork.py[86] INFO Epoch 7 Loss 1.770656 Time elapsed 429.924197
+03:02:14 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-7.model
+03:02:15 NeuralNetwork.py[79] INFO Epoch 8 Batch 0 Avg loss 1.792255
+03:03:15 NeuralNetwork.py[79] INFO Epoch 8 Batch 70 Avg loss 1.731001
+03:04:16 NeuralNetwork.py[79] INFO Epoch 8 Batch 141 Avg loss 1.737942
+03:05:17 NeuralNetwork.py[79] INFO Epoch 8 Batch 211 Avg loss 1.739646
+03:06:17 NeuralNetwork.py[79] INFO Epoch 8 Batch 281 Avg loss 1.730790
+03:07:18 NeuralNetwork.py[79] INFO Epoch 8 Batch 352 Avg loss 1.726281
+03:08:18 NeuralNetwork.py[79] INFO Epoch 8 Batch 422 Avg loss 1.723768
+03:09:18 NeuralNetwork.py[79] INFO Epoch 8 Batch 492 Avg loss 1.721408
+03:09:24 NeuralNetwork.py[86] INFO Epoch 8 Loss 1.721061 Time elapsed 429.897901
+03:09:24 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-8.model
+03:09:25 NeuralNetwork.py[79] INFO Epoch 9 Batch 0 Avg loss 1.719517
+03:10:26 NeuralNetwork.py[79] INFO Epoch 9 Batch 71 Avg loss 1.679507
+03:11:27 NeuralNetwork.py[79] INFO Epoch 9 Batch 142 Avg loss 1.690200
+03:12:27 NeuralNetwork.py[79] INFO Epoch 9 Batch 212 Avg loss 1.690466
+03:13:28 NeuralNetwork.py[79] INFO Epoch 9 Batch 283 Avg loss 1.681435
+03:14:28 NeuralNetwork.py[79] INFO Epoch 9 Batch 351 Avg loss 1.677927
+03:15:29 NeuralNetwork.py[79] INFO Epoch 9 Batch 422 Avg loss 1.676306
+03:16:29 NeuralNetwork.py[79] INFO Epoch 9 Batch 492 Avg loss 1.673703
+03:16:35 NeuralNetwork.py[86] INFO Epoch 9 Loss 1.673266 Time elapsed 430.880067
+03:16:35 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-9.model
+03:16:36 NeuralNetwork.py[79] INFO Epoch 10 Batch 0 Avg loss 1.655889
+03:17:36 NeuralNetwork.py[79] INFO Epoch 10 Batch 70 Avg loss 1.635310
+03:18:37 NeuralNetwork.py[79] INFO Epoch 10 Batch 141 Avg loss 1.645602
+03:19:37 NeuralNetwork.py[79] INFO Epoch 10 Batch 211 Avg loss 1.647892
+03:20:37 NeuralNetwork.py[79] INFO Epoch 10 Batch 282 Avg loss 1.638652
+03:21:38 NeuralNetwork.py[79] INFO Epoch 10 Batch 353 Avg loss 1.636055
+03:22:39 NeuralNetwork.py[79] INFO Epoch 10 Batch 424 Avg loss 1.635489
+03:23:39 NeuralNetwork.py[79] INFO Epoch 10 Batch 495 Avg loss 1.634100
+03:23:43 NeuralNetwork.py[86] INFO Epoch 10 Loss 1.634080 Time elapsed 427.631460
+03:23:43 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-10.model
+03:23:44 NeuralNetwork.py[79] INFO Epoch 11 Batch 0 Avg loss 1.623770
+03:24:44 NeuralNetwork.py[79] INFO Epoch 11 Batch 71 Avg loss 1.600496
+03:25:44 NeuralNetwork.py[79] INFO Epoch 11 Batch 140 Avg loss 1.611645
+03:26:45 NeuralNetwork.py[79] INFO Epoch 11 Batch 211 Avg loss 1.614917
+03:27:46 NeuralNetwork.py[79] INFO Epoch 11 Batch 282 Avg loss 1.606078
+03:28:46 NeuralNetwork.py[79] INFO Epoch 11 Batch 353 Avg loss 1.604449
+03:29:47 NeuralNetwork.py[79] INFO Epoch 11 Batch 424 Avg loss 1.603883
+03:30:48 NeuralNetwork.py[79] INFO Epoch 11 Batch 495 Avg loss 1.602843
+03:30:51 NeuralNetwork.py[86] INFO Epoch 11 Loss 1.602706 Time elapsed 428.181751
+03:30:51 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-11.model
+03:30:52 NeuralNetwork.py[79] INFO Epoch 12 Batch 0 Avg loss 1.611509
+03:31:53 NeuralNetwork.py[79] INFO Epoch 12 Batch 71 Avg loss 1.571234
+03:32:53 NeuralNetwork.py[79] INFO Epoch 12 Batch 142 Avg loss 1.582744
+03:33:54 NeuralNetwork.py[79] INFO Epoch 12 Batch 212 Avg loss 1.585134
+03:34:54 NeuralNetwork.py[79] INFO Epoch 12 Batch 282 Avg loss 1.577324
+03:35:54 NeuralNetwork.py[79] INFO Epoch 12 Batch 353 Avg loss 1.574692
+03:36:55 NeuralNetwork.py[79] INFO Epoch 12 Batch 423 Avg loss 1.575478
+03:37:55 NeuralNetwork.py[79] INFO Epoch 12 Batch 494 Avg loss 1.575018
+03:37:59 NeuralNetwork.py[86] INFO Epoch 12 Loss 1.574626 Time elapsed 428.345806
+03:38:00 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-12.model
+03:38:01 NeuralNetwork.py[79] INFO Epoch 13 Batch 0 Avg loss 1.573481
+03:39:01 NeuralNetwork.py[79] INFO Epoch 13 Batch 71 Avg loss 1.545845
+03:40:02 NeuralNetwork.py[79] INFO Epoch 13 Batch 142 Avg loss 1.557870
+03:41:02 NeuralNetwork.py[79] INFO Epoch 13 Batch 213 Avg loss 1.562290
+03:42:03 NeuralNetwork.py[79] INFO Epoch 13 Batch 284 Avg loss 1.553496
+03:43:03 NeuralNetwork.py[79] INFO Epoch 13 Batch 355 Avg loss 1.551375
+03:44:04 NeuralNetwork.py[79] INFO Epoch 13 Batch 426 Avg loss 1.553114
+03:45:05 NeuralNetwork.py[79] INFO Epoch 13 Batch 497 Avg loss 1.552159
+03:45:06 NeuralNetwork.py[86] INFO Epoch 13 Loss 1.552106 Time elapsed 426.826976
+03:45:07 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-13.model
+03:45:07 NeuralNetwork.py[79] INFO Epoch 14 Batch 0 Avg loss 1.529660
+03:46:07 NeuralNetwork.py[79] INFO Epoch 14 Batch 70 Avg loss 1.527061
+03:47:08 NeuralNetwork.py[79] INFO Epoch 14 Batch 141 Avg loss 1.537025
+03:48:09 NeuralNetwork.py[79] INFO Epoch 14 Batch 212 Avg loss 1.540595
+03:49:09 NeuralNetwork.py[79] INFO Epoch 14 Batch 283 Avg loss 1.533196
+03:50:10 NeuralNetwork.py[79] INFO Epoch 14 Batch 353 Avg loss 1.531891
+03:51:10 NeuralNetwork.py[79] INFO Epoch 14 Batch 424 Avg loss 1.533359
+03:52:11 NeuralNetwork.py[79] INFO Epoch 14 Batch 495 Avg loss 1.533116
+03:52:14 NeuralNetwork.py[86] INFO Epoch 14 Loss 1.533094 Time elapsed 427.727032
+03:52:14 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-14.model
+03:52:15 NeuralNetwork.py[79] INFO Epoch 15 Batch 0 Avg loss 1.507704
+03:53:16 NeuralNetwork.py[79] INFO Epoch 15 Batch 70 Avg loss 1.506246
+03:54:16 NeuralNetwork.py[79] INFO Epoch 15 Batch 140 Avg loss 1.517042
+03:55:16 NeuralNetwork.py[79] INFO Epoch 15 Batch 210 Avg loss 1.521735
+03:56:16 NeuralNetwork.py[79] INFO Epoch 15 Batch 280 Avg loss 1.513504
+03:57:17 NeuralNetwork.py[79] INFO Epoch 15 Batch 350 Avg loss 1.511502
+03:58:17 NeuralNetwork.py[79] INFO Epoch 15 Batch 420 Avg loss 1.514008
+03:59:17 NeuralNetwork.py[79] INFO Epoch 15 Batch 490 Avg loss 1.514121
+03:59:25 NeuralNetwork.py[86] INFO Epoch 15 Loss 1.513382 Time elapsed 430.368909
+03:59:25 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-15.model
+03:59:26 NeuralNetwork.py[79] INFO Epoch 16 Batch 0 Avg loss 1.486800
+04:00:26 NeuralNetwork.py[79] INFO Epoch 16 Batch 70 Avg loss 1.488565
+04:01:26 NeuralNetwork.py[79] INFO Epoch 16 Batch 139 Avg loss 1.499461
+04:02:26 NeuralNetwork.py[79] INFO Epoch 16 Batch 209 Avg loss 1.504884
+04:03:26 NeuralNetwork.py[79] INFO Epoch 16 Batch 279 Avg loss 1.497115
+04:04:27 NeuralNetwork.py[79] INFO Epoch 16 Batch 349 Avg loss 1.495426
+04:05:27 NeuralNetwork.py[79] INFO Epoch 16 Batch 419 Avg loss 1.497639
+04:06:27 NeuralNetwork.py[79] INFO Epoch 16 Batch 489 Avg loss 1.498339
+04:06:36 NeuralNetwork.py[86] INFO Epoch 16 Loss 1.497800 Time elapsed 430.720212
+04:06:36 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-16.model
+04:06:37 NeuralNetwork.py[79] INFO Epoch 17 Batch 0 Avg loss 1.468506
+04:07:37 NeuralNetwork.py[79] INFO Epoch 17 Batch 70 Avg loss 1.474367
+04:08:37 NeuralNetwork.py[79] INFO Epoch 17 Batch 140 Avg loss 1.484798
+04:09:37 NeuralNetwork.py[79] INFO Epoch 17 Batch 211 Avg loss 1.489792
+04:10:38 NeuralNetwork.py[79] INFO Epoch 17 Batch 281 Avg loss 1.482749
+04:11:38 NeuralNetwork.py[79] INFO Epoch 17 Batch 351 Avg loss 1.481334
+04:12:38 NeuralNetwork.py[79] INFO Epoch 17 Batch 421 Avg loss 1.483401
+04:13:38 NeuralNetwork.py[79] INFO Epoch 17 Batch 491 Avg loss 1.483887
+04:13:45 NeuralNetwork.py[86] INFO Epoch 17 Loss 1.483575 Time elapsed 429.410037
+04:13:45 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-17.model
+04:13:46 NeuralNetwork.py[79] INFO Epoch 18 Batch 0 Avg loss 1.448856
+04:14:46 NeuralNetwork.py[79] INFO Epoch 18 Batch 70 Avg loss 1.461661
+04:15:46 NeuralNetwork.py[79] INFO Epoch 18 Batch 140 Avg loss 1.471704
+04:16:46 NeuralNetwork.py[79] INFO Epoch 18 Batch 210 Avg loss 1.476992
+04:17:46 NeuralNetwork.py[79] INFO Epoch 18 Batch 280 Avg loss 1.469563
+04:18:47 NeuralNetwork.py[79] INFO Epoch 18 Batch 350 Avg loss 1.468457
+04:19:47 NeuralNetwork.py[79] INFO Epoch 18 Batch 418 Avg loss 1.470408
+04:20:47 NeuralNetwork.py[79] INFO Epoch 18 Batch 488 Avg loss 1.471321
+04:20:56 NeuralNetwork.py[86] INFO Epoch 18 Loss 1.470835 Time elapsed 431.275439
+04:20:57 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-18.model
+04:20:57 NeuralNetwork.py[79] INFO Epoch 19 Batch 0 Avg loss 1.431053
+04:21:57 NeuralNetwork.py[79] INFO Epoch 19 Batch 70 Avg loss 1.449077
+04:22:58 NeuralNetwork.py[79] INFO Epoch 19 Batch 140 Avg loss 1.458628
+04:23:58 NeuralNetwork.py[79] INFO Epoch 19 Batch 210 Avg loss 1.464171
+04:24:59 NeuralNetwork.py[79] INFO Epoch 19 Batch 280 Avg loss 1.456976
+04:25:59 NeuralNetwork.py[79] INFO Epoch 19 Batch 350 Avg loss 1.455807
+04:26:59 NeuralNetwork.py[79] INFO Epoch 19 Batch 420 Avg loss 1.458577
+04:28:00 NeuralNetwork.py[79] INFO Epoch 19 Batch 488 Avg loss 1.459842
+04:28:09 NeuralNetwork.py[86] INFO Epoch 19 Loss 1.459344 Time elapsed 432.325586
+04:28:09 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-19.model
+04:28:10 NeuralNetwork.py[79] INFO Epoch 20 Batch 0 Avg loss 1.415495
+04:29:10 NeuralNetwork.py[79] INFO Epoch 20 Batch 71 Avg loss 1.433968
+04:30:10 NeuralNetwork.py[79] INFO Epoch 20 Batch 142 Avg loss 1.446294
+04:31:11 NeuralNetwork.py[79] INFO Epoch 20 Batch 213 Avg loss 1.451533
+04:32:11 NeuralNetwork.py[79] INFO Epoch 20 Batch 284 Avg loss 1.444449
+04:33:11 NeuralNetwork.py[79] INFO Epoch 20 Batch 355 Avg loss 1.444584
+04:34:11 NeuralNetwork.py[79] INFO Epoch 20 Batch 426 Avg loss 1.446345
+04:35:12 NeuralNetwork.py[79] INFO Epoch 20 Batch 498 Avg loss 1.448086
+04:35:13 NeuralNetwork.py[86] INFO Epoch 20 Loss 1.448240 Time elapsed 423.904397
+04:35:13 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-20.model
+04:35:14 NeuralNetwork.py[79] INFO Epoch 21 Batch 0 Avg loss 1.404354
+04:36:14 NeuralNetwork.py[79] INFO Epoch 21 Batch 71 Avg loss 1.425802
+04:37:14 NeuralNetwork.py[79] INFO Epoch 21 Batch 142 Avg loss 1.436610
+04:38:15 NeuralNetwork.py[79] INFO Epoch 21 Batch 214 Avg loss 1.442031
+04:39:15 NeuralNetwork.py[79] INFO Epoch 21 Batch 285 Avg loss 1.435397
+04:40:15 NeuralNetwork.py[79] INFO Epoch 21 Batch 356 Avg loss 1.435418
+04:41:16 NeuralNetwork.py[79] INFO Epoch 21 Batch 427 Avg loss 1.436719
+04:42:16 NeuralNetwork.py[79] INFO Epoch 21 Batch 498 Avg loss 1.437545
+04:42:17 NeuralNetwork.py[86] INFO Epoch 21 Loss 1.437695 Time elapsed 423.562849
+04:42:17 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-21.model
+04:42:18 NeuralNetwork.py[79] INFO Epoch 22 Batch 0 Avg loss 1.399131
+04:43:18 NeuralNetwork.py[79] INFO Epoch 22 Batch 71 Avg loss 1.415951
+04:44:18 NeuralNetwork.py[79] INFO Epoch 22 Batch 142 Avg loss 1.426495
+04:45:19 NeuralNetwork.py[79] INFO Epoch 22 Batch 213 Avg loss 1.431707
+04:46:19 NeuralNetwork.py[79] INFO Epoch 22 Batch 284 Avg loss 1.425452
+04:47:20 NeuralNetwork.py[79] INFO Epoch 22 Batch 355 Avg loss 1.425908
+04:48:20 NeuralNetwork.py[79] INFO Epoch 22 Batch 426 Avg loss 1.427242
+04:49:20 NeuralNetwork.py[79] INFO Epoch 22 Batch 497 Avg loss 1.427961
+04:49:22 NeuralNetwork.py[86] INFO Epoch 22 Loss 1.427944 Time elapsed 424.988987
+04:49:22 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-22.model
+04:49:23 NeuralNetwork.py[79] INFO Epoch 23 Batch 0 Avg loss 1.391546
+04:50:24 NeuralNetwork.py[79] INFO Epoch 23 Batch 72 Avg loss 1.403996
+04:51:24 NeuralNetwork.py[79] INFO Epoch 23 Batch 143 Avg loss 1.419209
+04:52:24 NeuralNetwork.py[79] INFO Epoch 23 Batch 215 Avg loss 1.423234
+04:53:25 NeuralNetwork.py[79] INFO Epoch 23 Batch 286 Avg loss 1.417101
+04:54:25 NeuralNetwork.py[79] INFO Epoch 23 Batch 357 Avg loss 1.417510
+04:55:25 NeuralNetwork.py[79] INFO Epoch 23 Batch 428 Avg loss 1.418363
+04:56:25 NeuralNetwork.py[79] INFO Epoch 23 Batch 499 Avg loss 1.418886
+04:56:25 NeuralNetwork.py[86] INFO Epoch 23 Loss 1.418886 Time elapsed 423.216575
+04:56:25 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-23.model
+04:56:26 NeuralNetwork.py[79] INFO Epoch 24 Batch 0 Avg loss 1.366653
+04:57:27 NeuralNetwork.py[79] INFO Epoch 24 Batch 72 Avg loss 1.393469
+04:58:27 NeuralNetwork.py[79] INFO Epoch 24 Batch 143 Avg loss 1.407490
+04:59:27 NeuralNetwork.py[79] INFO Epoch 24 Batch 214 Avg loss 1.411931
+05:00:28 NeuralNetwork.py[79] INFO Epoch 24 Batch 286 Avg loss 1.407039
+05:01:29 NeuralNetwork.py[79] INFO Epoch 24 Batch 358 Avg loss 1.407767
+05:02:30 NeuralNetwork.py[79] INFO Epoch 24 Batch 430 Avg loss 1.408623
+05:03:29 NeuralNetwork.py[86] INFO Epoch 24 Loss 1.409217 Time elapsed 423.249330
+05:03:29 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-24.model
+05:03:29 NeuralNetwork.py[79] INFO Epoch 25 Batch 0 Avg loss 1.362519
+05:04:30 NeuralNetwork.py[79] INFO Epoch 25 Batch 72 Avg loss 1.382375
+05:05:31 NeuralNetwork.py[79] INFO Epoch 25 Batch 144 Avg loss 1.396371
+05:06:31 NeuralNetwork.py[79] INFO Epoch 25 Batch 215 Avg loss 1.401798
+05:07:31 NeuralNetwork.py[79] INFO Epoch 25 Batch 286 Avg loss 1.397507
+05:08:32 NeuralNetwork.py[79] INFO Epoch 25 Batch 358 Avg loss 1.398930
+05:09:33 NeuralNetwork.py[79] INFO Epoch 25 Batch 430 Avg loss 1.400601
+05:10:31 NeuralNetwork.py[86] INFO Epoch 25 Loss 1.400959 Time elapsed 422.122354
+05:10:31 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-25.model
+05:10:32 NeuralNetwork.py[79] INFO Epoch 26 Batch 0 Avg loss 1.352597
+05:11:32 NeuralNetwork.py[79] INFO Epoch 26 Batch 71 Avg loss 1.378224
+05:12:32 NeuralNetwork.py[79] INFO Epoch 26 Batch 143 Avg loss 1.389758
+05:13:33 NeuralNetwork.py[79] INFO Epoch 26 Batch 215 Avg loss 1.394705
+05:14:34 NeuralNetwork.py[79] INFO Epoch 26 Batch 287 Avg loss 1.391162
+05:15:35 NeuralNetwork.py[79] INFO Epoch 26 Batch 358 Avg loss 1.392232
+05:16:35 NeuralNetwork.py[79] INFO Epoch 26 Batch 426 Avg loss 1.393328
+05:17:36 NeuralNetwork.py[79] INFO Epoch 26 Batch 498 Avg loss 1.393801
+05:17:37 NeuralNetwork.py[86] INFO Epoch 26 Loss 1.393969 Time elapsed 425.714524
+05:17:37 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-26.model
+05:17:38 NeuralNetwork.py[79] INFO Epoch 27 Batch 0 Avg loss 1.335293
+05:18:38 NeuralNetwork.py[79] INFO Epoch 27 Batch 71 Avg loss 1.370978
+05:19:38 NeuralNetwork.py[79] INFO Epoch 27 Batch 141 Avg loss 1.381733
+05:20:38 NeuralNetwork.py[79] INFO Epoch 27 Batch 213 Avg loss 1.387766
+05:21:39 NeuralNetwork.py[79] INFO Epoch 27 Batch 285 Avg loss 1.383287
+05:22:40 NeuralNetwork.py[79] INFO Epoch 27 Batch 357 Avg loss 1.385097
+05:23:40 NeuralNetwork.py[79] INFO Epoch 27 Batch 429 Avg loss 1.386222
+05:24:39 NeuralNetwork.py[86] INFO Epoch 27 Loss 1.386243 Time elapsed 422.208810
+05:24:39 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-27.model
+05:24:40 NeuralNetwork.py[79] INFO Epoch 28 Batch 0 Avg loss 1.336005
+05:25:40 NeuralNetwork.py[79] INFO Epoch 28 Batch 72 Avg loss 1.359998
+05:26:41 NeuralNetwork.py[79] INFO Epoch 28 Batch 144 Avg loss 1.373968
+05:27:42 NeuralNetwork.py[79] INFO Epoch 28 Batch 216 Avg loss 1.379259
+05:28:42 NeuralNetwork.py[79] INFO Epoch 28 Batch 287 Avg loss 1.376421
+05:29:43 NeuralNetwork.py[79] INFO Epoch 28 Batch 357 Avg loss 1.377925
+05:30:43 NeuralNetwork.py[79] INFO Epoch 28 Batch 429 Avg loss 1.379482
+05:31:42 NeuralNetwork.py[86] INFO Epoch 28 Loss 1.379327 Time elapsed 423.162964
+05:31:42 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-28.model
+05:31:43 NeuralNetwork.py[79] INFO Epoch 29 Batch 0 Avg loss 1.322587
+05:32:44 NeuralNetwork.py[79] INFO Epoch 29 Batch 72 Avg loss 1.355069
+05:33:44 NeuralNetwork.py[79] INFO Epoch 29 Batch 144 Avg loss 1.368594
+05:34:45 NeuralNetwork.py[79] INFO Epoch 29 Batch 216 Avg loss 1.373447
+05:35:45 NeuralNetwork.py[79] INFO Epoch 29 Batch 288 Avg loss 1.369823
+05:36:46 NeuralNetwork.py[79] INFO Epoch 29 Batch 360 Avg loss 1.372012
+05:37:46 NeuralNetwork.py[79] INFO Epoch 29 Batch 432 Avg loss 1.373214
+05:38:43 NeuralNetwork.py[86] INFO Epoch 29 Loss 1.372995 Time elapsed 420.317144
+05:38:43 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-29.model
+05:38:44 NeuralNetwork.py[79] INFO Epoch 30 Batch 0 Avg loss 1.322386
+05:39:44 NeuralNetwork.py[79] INFO Epoch 30 Batch 71 Avg loss 1.350742
+05:40:44 NeuralNetwork.py[79] INFO Epoch 30 Batch 143 Avg loss 1.361828
+05:41:44 NeuralNetwork.py[79] INFO Epoch 30 Batch 215 Avg loss 1.366462
+05:42:45 NeuralNetwork.py[79] INFO Epoch 30 Batch 287 Avg loss 1.362387
+05:43:45 NeuralNetwork.py[79] INFO Epoch 30 Batch 359 Avg loss 1.363899
+05:44:46 NeuralNetwork.py[79] INFO Epoch 30 Batch 431 Avg loss 1.364594
+05:45:43 NeuralNetwork.py[86] INFO Epoch 30 Loss 1.365037 Time elapsed 419.806365
+05:45:43 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-30.model
+05:45:43 NeuralNetwork.py[79] INFO Epoch 31 Batch 0 Avg loss 1.323886
+05:46:44 NeuralNetwork.py[79] INFO Epoch 31 Batch 72 Avg loss 1.341021
+05:47:44 NeuralNetwork.py[79] INFO Epoch 31 Batch 144 Avg loss 1.354814
+05:48:45 NeuralNetwork.py[79] INFO Epoch 31 Batch 216 Avg loss 1.359305
+05:49:45 NeuralNetwork.py[79] INFO Epoch 31 Batch 288 Avg loss 1.355365
+05:50:45 NeuralNetwork.py[79] INFO Epoch 31 Batch 360 Avg loss 1.357738
+05:51:46 NeuralNetwork.py[79] INFO Epoch 31 Batch 432 Avg loss 1.359198
+05:52:42 NeuralNetwork.py[86] INFO Epoch 31 Loss 1.358851 Time elapsed 419.502362
+05:52:42 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-31.model
+05:52:43 NeuralNetwork.py[79] INFO Epoch 32 Batch 0 Avg loss 1.317828
+05:53:43 NeuralNetwork.py[79] INFO Epoch 32 Batch 70 Avg loss 1.337213
+05:54:43 NeuralNetwork.py[79] INFO Epoch 32 Batch 141 Avg loss 1.347756
+05:55:44 NeuralNetwork.py[79] INFO Epoch 32 Batch 212 Avg loss 1.353103
+05:56:44 NeuralNetwork.py[79] INFO Epoch 32 Batch 283 Avg loss 1.350060
+05:57:44 NeuralNetwork.py[79] INFO Epoch 32 Batch 354 Avg loss 1.352549
+05:58:45 NeuralNetwork.py[79] INFO Epoch 32 Batch 425 Avg loss 1.353827
+05:59:45 NeuralNetwork.py[79] INFO Epoch 32 Batch 496 Avg loss 1.353600
+05:59:47 NeuralNetwork.py[86] INFO Epoch 32 Loss 1.353512 Time elapsed 425.045132
+05:59:47 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-32.model
+05:59:48 NeuralNetwork.py[79] INFO Epoch 33 Batch 0 Avg loss 1.310741
+06:00:48 NeuralNetwork.py[79] INFO Epoch 33 Batch 71 Avg loss 1.328932
+06:01:49 NeuralNetwork.py[79] INFO Epoch 33 Batch 142 Avg loss 1.342062
+06:02:49 NeuralNetwork.py[79] INFO Epoch 33 Batch 213 Avg loss 1.347037
+06:03:49 NeuralNetwork.py[79] INFO Epoch 33 Batch 284 Avg loss 1.343858
+06:04:49 NeuralNetwork.py[79] INFO Epoch 33 Batch 355 Avg loss 1.346667
+06:05:50 NeuralNetwork.py[79] INFO Epoch 33 Batch 426 Avg loss 1.348195
+06:06:50 NeuralNetwork.py[79] INFO Epoch 33 Batch 497 Avg loss 1.347993
+06:06:51 NeuralNetwork.py[86] INFO Epoch 33 Loss 1.348017 Time elapsed 424.023580
+06:06:51 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-33.model
+06:06:52 NeuralNetwork.py[79] INFO Epoch 34 Batch 0 Avg loss 1.302724
+06:07:53 NeuralNetwork.py[79] INFO Epoch 34 Batch 71 Avg loss 1.324448
+06:08:53 NeuralNetwork.py[79] INFO Epoch 34 Batch 142 Avg loss 1.336815
+06:09:53 NeuralNetwork.py[79] INFO Epoch 34 Batch 213 Avg loss 1.342297
+06:10:53 NeuralNetwork.py[79] INFO Epoch 34 Batch 284 Avg loss 1.339309
+06:11:53 NeuralNetwork.py[79] INFO Epoch 34 Batch 355 Avg loss 1.341325
+06:12:54 NeuralNetwork.py[79] INFO Epoch 34 Batch 426 Avg loss 1.343005
+06:13:54 NeuralNetwork.py[79] INFO Epoch 34 Batch 497 Avg loss 1.342784
+06:13:56 NeuralNetwork.py[86] INFO Epoch 34 Loss 1.342810 Time elapsed 424.353629
+06:13:56 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-34.model
+06:13:57 NeuralNetwork.py[79] INFO Epoch 35 Batch 0 Avg loss 1.319336
+06:14:57 NeuralNetwork.py[79] INFO Epoch 35 Batch 71 Avg loss 1.320040
+06:15:57 NeuralNetwork.py[79] INFO Epoch 35 Batch 142 Avg loss 1.330787
+06:16:57 NeuralNetwork.py[79] INFO Epoch 35 Batch 213 Avg loss 1.335251
+06:17:57 NeuralNetwork.py[79] INFO Epoch 35 Batch 284 Avg loss 1.332589
+06:18:58 NeuralNetwork.py[79] INFO Epoch 35 Batch 355 Avg loss 1.335259
+06:19:58 NeuralNetwork.py[79] INFO Epoch 35 Batch 426 Avg loss 1.336479
+06:20:58 NeuralNetwork.py[79] INFO Epoch 35 Batch 497 Avg loss 1.336135
+06:21:00 NeuralNetwork.py[86] INFO Epoch 35 Loss 1.336183 Time elapsed 424.045448
+06:21:00 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-35.model
+06:21:01 NeuralNetwork.py[79] INFO Epoch 36 Batch 0 Avg loss 1.298926
+06:22:01 NeuralNetwork.py[79] INFO Epoch 36 Batch 71 Avg loss 1.312103
+06:23:01 NeuralNetwork.py[79] INFO Epoch 36 Batch 142 Avg loss 1.324278
+06:24:01 NeuralNetwork.py[79] INFO Epoch 36 Batch 213 Avg loss 1.330052
+06:25:02 NeuralNetwork.py[79] INFO Epoch 36 Batch 284 Avg loss 1.328014
+06:26:02 NeuralNetwork.py[79] INFO Epoch 36 Batch 355 Avg loss 1.331228
+06:27:02 NeuralNetwork.py[79] INFO Epoch 36 Batch 426 Avg loss 1.333152
+06:28:02 NeuralNetwork.py[79] INFO Epoch 36 Batch 497 Avg loss 1.332336
+06:28:04 NeuralNetwork.py[86] INFO Epoch 36 Loss 1.332330 Time elapsed 423.737586
+06:28:04 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-36.model
+06:28:05 NeuralNetwork.py[79] INFO Epoch 37 Batch 0 Avg loss 1.299523
+06:29:05 NeuralNetwork.py[79] INFO Epoch 37 Batch 71 Avg loss 1.309180
+06:30:05 NeuralNetwork.py[79] INFO Epoch 37 Batch 142 Avg loss 1.319512
+06:31:05 NeuralNetwork.py[79] INFO Epoch 37 Batch 213 Avg loss 1.326252
+06:32:05 NeuralNetwork.py[79] INFO Epoch 37 Batch 284 Avg loss 1.322099
+06:33:06 NeuralNetwork.py[79] INFO Epoch 37 Batch 355 Avg loss 1.324504
+06:34:06 NeuralNetwork.py[79] INFO Epoch 37 Batch 426 Avg loss 1.326127
+06:35:06 NeuralNetwork.py[79] INFO Epoch 37 Batch 497 Avg loss 1.325618
+06:35:08 NeuralNetwork.py[86] INFO Epoch 37 Loss 1.325629 Time elapsed 424.280276
+06:35:08 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-37.model
+06:35:09 NeuralNetwork.py[79] INFO Epoch 38 Batch 0 Avg loss 1.294906
+06:36:10 NeuralNetwork.py[79] INFO Epoch 38 Batch 70 Avg loss 1.306564
+06:37:10 NeuralNetwork.py[79] INFO Epoch 38 Batch 142 Avg loss 1.313667
+06:38:11 NeuralNetwork.py[79] INFO Epoch 38 Batch 214 Avg loss 1.318175
+06:39:11 NeuralNetwork.py[79] INFO Epoch 38 Batch 285 Avg loss 1.316291
+06:40:11 NeuralNetwork.py[79] INFO Epoch 38 Batch 357 Avg loss 1.319040
+06:41:12 NeuralNetwork.py[79] INFO Epoch 38 Batch 429 Avg loss 1.320357
+06:42:10 NeuralNetwork.py[86] INFO Epoch 38 Loss 1.319901 Time elapsed 421.826661
+06:42:10 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-38.model
+06:42:11 NeuralNetwork.py[79] INFO Epoch 39 Batch 0 Avg loss 1.285950
+06:43:11 NeuralNetwork.py[79] INFO Epoch 39 Batch 72 Avg loss 1.295219
+06:44:12 NeuralNetwork.py[79] INFO Epoch 39 Batch 144 Avg loss 1.307352
+06:45:12 NeuralNetwork.py[79] INFO Epoch 39 Batch 216 Avg loss 1.312017
+06:46:12 NeuralNetwork.py[79] INFO Epoch 39 Batch 288 Avg loss 1.310026
+06:47:13 NeuralNetwork.py[79] INFO Epoch 39 Batch 360 Avg loss 1.313622
+06:48:13 NeuralNetwork.py[79] INFO Epoch 39 Batch 430 Avg loss 1.314826
+06:49:11 NeuralNetwork.py[86] INFO Epoch 39 Loss 1.314538 Time elapsed 420.408379
+06:49:11 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-39.model
+06:49:12 NeuralNetwork.py[79] INFO Epoch 40 Batch 0 Avg loss 1.305790
+06:50:12 NeuralNetwork.py[79] INFO Epoch 40 Batch 72 Avg loss 1.292151
+06:51:12 NeuralNetwork.py[79] INFO Epoch 40 Batch 144 Avg loss 1.304060
+06:52:12 NeuralNetwork.py[79] INFO Epoch 40 Batch 215 Avg loss 1.307534
+06:53:12 NeuralNetwork.py[79] INFO Epoch 40 Batch 286 Avg loss 1.306187
+06:54:13 NeuralNetwork.py[79] INFO Epoch 40 Batch 358 Avg loss 1.308865
+06:55:13 NeuralNetwork.py[79] INFO Epoch 40 Batch 430 Avg loss 1.310413
+06:56:11 NeuralNetwork.py[86] INFO Epoch 40 Loss 1.309587 Time elapsed 420.392083
+06:56:11 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-40.model
+06:56:12 NeuralNetwork.py[79] INFO Epoch 41 Batch 0 Avg loss 1.290489
+06:57:12 NeuralNetwork.py[79] INFO Epoch 41 Batch 72 Avg loss 1.289280
+06:58:13 NeuralNetwork.py[79] INFO Epoch 41 Batch 144 Avg loss 1.299096
+06:59:13 NeuralNetwork.py[79] INFO Epoch 41 Batch 216 Avg loss 1.302425
+07:00:13 NeuralNetwork.py[79] INFO Epoch 41 Batch 288 Avg loss 1.300578
+07:01:14 NeuralNetwork.py[79] INFO Epoch 41 Batch 360 Avg loss 1.303507
+07:02:14 NeuralNetwork.py[79] INFO Epoch 41 Batch 432 Avg loss 1.305188
+07:03:10 NeuralNetwork.py[86] INFO Epoch 41 Loss 1.304316 Time elapsed 418.654228
+07:03:10 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-41.model
+07:03:11 NeuralNetwork.py[79] INFO Epoch 42 Batch 0 Avg loss 1.300561
+07:04:11 NeuralNetwork.py[79] INFO Epoch 42 Batch 72 Avg loss 1.280469
+07:05:11 NeuralNetwork.py[79] INFO Epoch 42 Batch 144 Avg loss 1.291059
+07:06:11 NeuralNetwork.py[79] INFO Epoch 42 Batch 216 Avg loss 1.296460
+07:07:12 NeuralNetwork.py[79] INFO Epoch 42 Batch 288 Avg loss 1.296024
+07:08:12 NeuralNetwork.py[79] INFO Epoch 42 Batch 360 Avg loss 1.299374
+07:09:12 NeuralNetwork.py[79] INFO Epoch 42 Batch 432 Avg loss 1.300392
+07:10:08 NeuralNetwork.py[86] INFO Epoch 42 Loss 1.299350 Time elapsed 418.033254
+07:10:08 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-42.model
+07:10:09 NeuralNetwork.py[79] INFO Epoch 43 Batch 0 Avg loss 1.283695
+07:11:09 NeuralNetwork.py[79] INFO Epoch 43 Batch 72 Avg loss 1.275048
+07:12:10 NeuralNetwork.py[79] INFO Epoch 43 Batch 144 Avg loss 1.285091
+07:13:10 NeuralNetwork.py[79] INFO Epoch 43 Batch 216 Avg loss 1.289928
+07:14:10 NeuralNetwork.py[79] INFO Epoch 43 Batch 288 Avg loss 1.289513
+07:15:11 NeuralNetwork.py[79] INFO Epoch 43 Batch 360 Avg loss 1.292633
+07:16:11 NeuralNetwork.py[79] INFO Epoch 43 Batch 432 Avg loss 1.294277
+07:17:07 NeuralNetwork.py[86] INFO Epoch 43 Loss 1.293533 Time elapsed 418.964999
+07:17:07 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-43.model
+07:17:08 NeuralNetwork.py[79] INFO Epoch 44 Batch 0 Avg loss 1.274545
+07:18:09 NeuralNetwork.py[79] INFO Epoch 44 Batch 72 Avg loss 1.270855
+07:19:09 NeuralNetwork.py[79] INFO Epoch 44 Batch 144 Avg loss 1.281527
+07:20:10 NeuralNetwork.py[79] INFO Epoch 44 Batch 216 Avg loss 1.286037
+07:21:10 NeuralNetwork.py[79] INFO Epoch 44 Batch 287 Avg loss 1.285069
+07:22:10 NeuralNetwork.py[79] INFO Epoch 44 Batch 358 Avg loss 1.287093
+07:23:10 NeuralNetwork.py[79] INFO Epoch 44 Batch 430 Avg loss 1.288461
+07:24:08 NeuralNetwork.py[86] INFO Epoch 44 Loss 1.287729 Time elapsed 420.576059
+07:24:08 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-44.model
+07:24:09 NeuralNetwork.py[79] INFO Epoch 45 Batch 0 Avg loss 1.281589
+07:25:09 NeuralNetwork.py[79] INFO Epoch 45 Batch 72 Avg loss 1.267056
+07:26:09 NeuralNetwork.py[79] INFO Epoch 45 Batch 144 Avg loss 1.276259
+07:27:10 NeuralNetwork.py[79] INFO Epoch 45 Batch 214 Avg loss 1.280477
+07:28:10 NeuralNetwork.py[79] INFO Epoch 45 Batch 285 Avg loss 1.279532
+07:29:10 NeuralNetwork.py[79] INFO Epoch 45 Batch 357 Avg loss 1.282452
+07:30:10 NeuralNetwork.py[79] INFO Epoch 45 Batch 429 Avg loss 1.283754
+07:31:10 NeuralNetwork.py[86] INFO Epoch 45 Loss 1.283229 Time elapsed 421.675849
+07:31:10 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-45.model
+07:31:10 NeuralNetwork.py[79] INFO Epoch 46 Batch 0 Avg loss 1.283735
+07:32:11 NeuralNetwork.py[79] INFO Epoch 46 Batch 72 Avg loss 1.259260
+07:33:11 NeuralNetwork.py[79] INFO Epoch 46 Batch 144 Avg loss 1.270550
+07:34:11 NeuralNetwork.py[79] INFO Epoch 46 Batch 216 Avg loss 1.274031
+07:35:11 NeuralNetwork.py[79] INFO Epoch 46 Batch 288 Avg loss 1.273050
+07:36:11 NeuralNetwork.py[79] INFO Epoch 46 Batch 360 Avg loss 1.276067
+07:37:11 NeuralNetwork.py[79] INFO Epoch 46 Batch 432 Avg loss 1.277749
+07:38:07 NeuralNetwork.py[86] INFO Epoch 46 Loss 1.276862 Time elapsed 417.582099
+07:38:07 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-46.model
+07:38:08 NeuralNetwork.py[79] INFO Epoch 47 Batch 0 Avg loss 1.277282
+07:39:09 NeuralNetwork.py[79] INFO Epoch 47 Batch 72 Avg loss 1.254450
+07:40:09 NeuralNetwork.py[79] INFO Epoch 47 Batch 144 Avg loss 1.264718
+07:41:09 NeuralNetwork.py[79] INFO Epoch 47 Batch 216 Avg loss 1.268407
+07:42:10 NeuralNetwork.py[79] INFO Epoch 47 Batch 288 Avg loss 1.267985
+07:43:10 NeuralNetwork.py[79] INFO Epoch 47 Batch 360 Avg loss 1.271805
+07:44:10 NeuralNetwork.py[79] INFO Epoch 47 Batch 432 Avg loss 1.272897
+07:45:06 NeuralNetwork.py[86] INFO Epoch 47 Loss 1.272095 Time elapsed 418.947830
+07:45:06 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-47.model
+07:45:07 NeuralNetwork.py[79] INFO Epoch 48 Batch 0 Avg loss 1.283350
+07:46:08 NeuralNetwork.py[79] INFO Epoch 48 Batch 72 Avg loss 1.248660
+07:47:08 NeuralNetwork.py[79] INFO Epoch 48 Batch 144 Avg loss 1.259274
+07:48:08 NeuralNetwork.py[79] INFO Epoch 48 Batch 216 Avg loss 1.263366
+07:49:08 NeuralNetwork.py[79] INFO Epoch 48 Batch 288 Avg loss 1.264040
+07:50:08 NeuralNetwork.py[79] INFO Epoch 48 Batch 360 Avg loss 1.267283
+07:51:09 NeuralNetwork.py[79] INFO Epoch 48 Batch 425 Avg loss 1.268299
+07:52:09 NeuralNetwork.py[79] INFO Epoch 48 Batch 495 Avg loss 1.267017
+07:52:13 NeuralNetwork.py[86] INFO Epoch 48 Loss 1.267302 Time elapsed 426.412528
+07:52:13 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-48.model
+07:52:14 NeuralNetwork.py[79] INFO Epoch 49 Batch 0 Avg loss 1.269658
+07:53:14 NeuralNetwork.py[79] INFO Epoch 49 Batch 71 Avg loss 1.244045
+07:54:14 NeuralNetwork.py[79] INFO Epoch 49 Batch 142 Avg loss 1.252396
+07:55:15 NeuralNetwork.py[79] INFO Epoch 49 Batch 213 Avg loss 1.256815
+07:56:15 NeuralNetwork.py[79] INFO Epoch 49 Batch 284 Avg loss 1.257330
+07:57:15 NeuralNetwork.py[79] INFO Epoch 49 Batch 355 Avg loss 1.261079
+07:58:15 NeuralNetwork.py[79] INFO Epoch 49 Batch 426 Avg loss 1.263164
+07:59:15 NeuralNetwork.py[79] INFO Epoch 49 Batch 497 Avg loss 1.262252
+07:59:17 NeuralNetwork.py[86] INFO Epoch 49 Loss 1.262318 Time elapsed 423.846183
+07:59:17 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-49.model
+07:59:18 NeuralNetwork.py[79] INFO Epoch 50 Batch 0 Avg loss 1.261681
+08:00:18 NeuralNetwork.py[79] INFO Epoch 50 Batch 72 Avg loss 1.239193
+08:01:19 NeuralNetwork.py[79] INFO Epoch 50 Batch 144 Avg loss 1.249771
+08:02:19 NeuralNetwork.py[79] INFO Epoch 50 Batch 215 Avg loss 1.252883
+08:03:19 NeuralNetwork.py[79] INFO Epoch 50 Batch 286 Avg loss 1.252756
+08:04:20 NeuralNetwork.py[79] INFO Epoch 50 Batch 357 Avg loss 1.255291
+08:05:20 NeuralNetwork.py[79] INFO Epoch 50 Batch 428 Avg loss 1.256201
+08:06:20 NeuralNetwork.py[86] INFO Epoch 50 Loss 1.255653 Time elapsed 423.041807
+08:06:20 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-50.model
+08:06:21 NeuralNetwork.py[79] INFO Epoch 51 Batch 0 Avg loss 1.257303
+08:07:22 NeuralNetwork.py[79] INFO Epoch 51 Batch 72 Avg loss 1.232524
+08:08:22 NeuralNetwork.py[79] INFO Epoch 51 Batch 144 Avg loss 1.242948
+08:09:22 NeuralNetwork.py[79] INFO Epoch 51 Batch 215 Avg loss 1.246827
+08:10:23 NeuralNetwork.py[79] INFO Epoch 51 Batch 287 Avg loss 1.247557
+08:11:23 NeuralNetwork.py[79] INFO Epoch 51 Batch 357 Avg loss 1.250535
+08:12:23 NeuralNetwork.py[79] INFO Epoch 51 Batch 429 Avg loss 1.251551
+08:13:21 NeuralNetwork.py[86] INFO Epoch 51 Loss 1.250812 Time elapsed 421.483495
+08:13:22 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-51.model
+08:13:22 NeuralNetwork.py[79] INFO Epoch 52 Batch 0 Avg loss 1.260823
+08:14:22 NeuralNetwork.py[79] INFO Epoch 52 Batch 71 Avg loss 1.225417
+08:15:23 NeuralNetwork.py[79] INFO Epoch 52 Batch 144 Avg loss 1.236732
+08:16:24 NeuralNetwork.py[79] INFO Epoch 52 Batch 217 Avg loss 1.240540
+08:17:25 NeuralNetwork.py[79] INFO Epoch 52 Batch 290 Avg loss 1.239472
+08:18:25 NeuralNetwork.py[79] INFO Epoch 52 Batch 362 Avg loss 1.244431
+08:19:26 NeuralNetwork.py[79] INFO Epoch 52 Batch 435 Avg loss 1.245167
+08:20:19 NeuralNetwork.py[86] INFO Epoch 52 Loss 1.244162 Time elapsed 417.682794
+08:20:19 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-52.model
+08:20:20 NeuralNetwork.py[79] INFO Epoch 53 Batch 0 Avg loss 1.265759
+08:21:21 NeuralNetwork.py[79] INFO Epoch 53 Batch 72 Avg loss 1.219742
+08:22:21 NeuralNetwork.py[79] INFO Epoch 53 Batch 145 Avg loss 1.231789
+08:23:22 NeuralNetwork.py[79] INFO Epoch 53 Batch 217 Avg loss 1.235575
+08:24:22 NeuralNetwork.py[79] INFO Epoch 53 Batch 289 Avg loss 1.235052
+08:25:22 NeuralNetwork.py[79] INFO Epoch 53 Batch 360 Avg loss 1.238320
+08:26:23 NeuralNetwork.py[79] INFO Epoch 53 Batch 432 Avg loss 1.239520
+08:27:19 NeuralNetwork.py[86] INFO Epoch 53 Loss 1.238721 Time elapsed 419.202766
+08:27:19 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-53.model
+08:27:19 NeuralNetwork.py[79] INFO Epoch 54 Batch 0 Avg loss 1.253078
+08:28:20 NeuralNetwork.py[79] INFO Epoch 54 Batch 73 Avg loss 1.213833
+08:29:20 NeuralNetwork.py[79] INFO Epoch 54 Batch 145 Avg loss 1.226846
+08:30:21 NeuralNetwork.py[79] INFO Epoch 54 Batch 218 Avg loss 1.230123
+08:31:22 NeuralNetwork.py[79] INFO Epoch 54 Batch 291 Avg loss 1.230188
+08:32:22 NeuralNetwork.py[79] INFO Epoch 54 Batch 364 Avg loss 1.232097
+08:33:22 NeuralNetwork.py[79] INFO Epoch 54 Batch 436 Avg loss 1.233107
+08:34:15 NeuralNetwork.py[86] INFO Epoch 54 Loss 1.232371 Time elapsed 416.812295
+08:34:15 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-54.model
+08:34:16 NeuralNetwork.py[79] INFO Epoch 55 Batch 0 Avg loss 1.238963
+08:35:16 NeuralNetwork.py[79] INFO Epoch 55 Batch 72 Avg loss 1.206281
+08:36:17 NeuralNetwork.py[79] INFO Epoch 55 Batch 145 Avg loss 1.220039
+08:37:17 NeuralNetwork.py[79] INFO Epoch 55 Batch 217 Avg loss 1.222750
+08:38:17 NeuralNetwork.py[79] INFO Epoch 55 Batch 289 Avg loss 1.223524
+08:39:17 NeuralNetwork.py[79] INFO Epoch 55 Batch 361 Avg loss 1.228239
+08:40:18 NeuralNetwork.py[79] INFO Epoch 55 Batch 433 Avg loss 1.229137
+08:41:12 NeuralNetwork.py[86] INFO Epoch 55 Loss 1.227842 Time elapsed 416.980108
+08:41:13 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-55.model
+08:41:13 NeuralNetwork.py[79] INFO Epoch 56 Batch 0 Avg loss 1.236598
+08:42:14 NeuralNetwork.py[79] INFO Epoch 56 Batch 72 Avg loss 1.202719
+08:43:14 NeuralNetwork.py[79] INFO Epoch 56 Batch 144 Avg loss 1.214395
+08:44:14 NeuralNetwork.py[79] INFO Epoch 56 Batch 216 Avg loss 1.216944
+08:45:14 NeuralNetwork.py[79] INFO Epoch 56 Batch 288 Avg loss 1.218306
+08:46:14 NeuralNetwork.py[79] INFO Epoch 56 Batch 360 Avg loss 1.221035
+08:47:15 NeuralNetwork.py[79] INFO Epoch 56 Batch 432 Avg loss 1.222415
+08:48:10 NeuralNetwork.py[86] INFO Epoch 56 Loss 1.221245 Time elapsed 417.860278
+08:48:11 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-56.model
+08:48:11 NeuralNetwork.py[79] INFO Epoch 57 Batch 0 Avg loss 1.227054
+08:49:12 NeuralNetwork.py[79] INFO Epoch 57 Batch 73 Avg loss 1.196003
+08:50:12 NeuralNetwork.py[79] INFO Epoch 57 Batch 145 Avg loss 1.207654
+08:51:12 NeuralNetwork.py[79] INFO Epoch 57 Batch 217 Avg loss 1.211159
+08:52:13 NeuralNetwork.py[79] INFO Epoch 57 Batch 290 Avg loss 1.210690
+08:53:13 NeuralNetwork.py[79] INFO Epoch 57 Batch 362 Avg loss 1.214977
+08:54:13 NeuralNetwork.py[79] INFO Epoch 57 Batch 434 Avg loss 1.215893
+08:55:08 NeuralNetwork.py[86] INFO Epoch 57 Loss 1.214548 Time elapsed 417.093961
+08:55:08 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-57.model
+08:55:09 NeuralNetwork.py[79] INFO Epoch 58 Batch 0 Avg loss 1.217601
+08:56:09 NeuralNetwork.py[79] INFO Epoch 58 Batch 72 Avg loss 1.193193
+08:57:09 NeuralNetwork.py[79] INFO Epoch 58 Batch 144 Avg loss 1.202742
+08:58:10 NeuralNetwork.py[79] INFO Epoch 58 Batch 215 Avg loss 1.205902
+08:59:10 NeuralNetwork.py[79] INFO Epoch 58 Batch 287 Avg loss 1.205732
+09:00:10 NeuralNetwork.py[79] INFO Epoch 58 Batch 359 Avg loss 1.208167
+09:01:10 NeuralNetwork.py[79] INFO Epoch 58 Batch 431 Avg loss 1.209299
+09:02:06 NeuralNetwork.py[86] INFO Epoch 58 Loss 1.208171 Time elapsed 418.591053
+09:02:07 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-58.model
+09:02:07 NeuralNetwork.py[79] INFO Epoch 59 Batch 0 Avg loss 1.221022
+09:03:08 NeuralNetwork.py[79] INFO Epoch 59 Batch 73 Avg loss 1.186490
+09:04:09 NeuralNetwork.py[79] INFO Epoch 59 Batch 146 Avg loss 1.197005
+09:05:09 NeuralNetwork.py[79] INFO Epoch 59 Batch 218 Avg loss 1.200569
+09:06:09 NeuralNetwork.py[79] INFO Epoch 59 Batch 290 Avg loss 1.199370
+09:07:10 NeuralNetwork.py[79] INFO Epoch 59 Batch 363 Avg loss 1.202952
+09:08:10 NeuralNetwork.py[79] INFO Epoch 59 Batch 436 Avg loss 1.204221
+09:09:03 NeuralNetwork.py[86] INFO Epoch 59 Loss 1.202694 Time elapsed 416.617260
+09:09:03 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-59.model
+09:09:04 NeuralNetwork.py[79] INFO Epoch 60 Batch 0 Avg loss 1.225192
+09:10:04 NeuralNetwork.py[79] INFO Epoch 60 Batch 72 Avg loss 1.177881
+09:11:04 NeuralNetwork.py[79] INFO Epoch 60 Batch 144 Avg loss 1.190409
+09:12:05 NeuralNetwork.py[79] INFO Epoch 60 Batch 217 Avg loss 1.193365
+09:13:06 NeuralNetwork.py[79] INFO Epoch 60 Batch 290 Avg loss 1.193663
+09:14:06 NeuralNetwork.py[79] INFO Epoch 60 Batch 362 Avg loss 1.198259
+09:15:06 NeuralNetwork.py[79] INFO Epoch 60 Batch 434 Avg loss 1.198935
+09:16:00 NeuralNetwork.py[86] INFO Epoch 60 Loss 1.197348 Time elapsed 417.076862
+09:16:00 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-60.model
+09:16:01 NeuralNetwork.py[79] INFO Epoch 61 Batch 0 Avg loss 1.227946
+09:17:01 NeuralNetwork.py[79] INFO Epoch 61 Batch 72 Avg loss 1.174341
+09:18:02 NeuralNetwork.py[79] INFO Epoch 61 Batch 145 Avg loss 1.184792
+09:19:03 NeuralNetwork.py[79] INFO Epoch 61 Batch 218 Avg loss 1.187754
+09:20:04 NeuralNetwork.py[79] INFO Epoch 61 Batch 291 Avg loss 1.188111
+09:21:04 NeuralNetwork.py[79] INFO Epoch 61 Batch 364 Avg loss 1.190993
+09:22:05 NeuralNetwork.py[79] INFO Epoch 61 Batch 436 Avg loss 1.192254
+09:22:58 NeuralNetwork.py[86] INFO Epoch 61 Loss 1.190992 Time elapsed 417.079975
+09:22:58 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-61.model
+09:22:58 NeuralNetwork.py[79] INFO Epoch 62 Batch 0 Avg loss 1.206555
+09:23:59 NeuralNetwork.py[79] INFO Epoch 62 Batch 72 Avg loss 1.168124
+09:24:59 NeuralNetwork.py[79] INFO Epoch 62 Batch 143 Avg loss 1.179326
+09:26:00 NeuralNetwork.py[79] INFO Epoch 62 Batch 216 Avg loss 1.181982
+09:27:00 NeuralNetwork.py[79] INFO Epoch 62 Batch 289 Avg loss 1.183519
+09:28:00 NeuralNetwork.py[79] INFO Epoch 62 Batch 361 Avg loss 1.188079
+09:29:01 NeuralNetwork.py[79] INFO Epoch 62 Batch 434 Avg loss 1.189446
+09:29:56 NeuralNetwork.py[86] INFO Epoch 62 Loss 1.187712 Time elapsed 418.037509
+09:29:56 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-62.model
+09:29:57 NeuralNetwork.py[79] INFO Epoch 63 Batch 0 Avg loss 1.221510
+09:30:57 NeuralNetwork.py[79] INFO Epoch 63 Batch 73 Avg loss 1.163755
+09:31:58 NeuralNetwork.py[79] INFO Epoch 63 Batch 146 Avg loss 1.174741
+09:32:58 NeuralNetwork.py[79] INFO Epoch 63 Batch 217 Avg loss 1.177519
+09:33:59 NeuralNetwork.py[79] INFO Epoch 63 Batch 289 Avg loss 1.177431
+09:34:59 NeuralNetwork.py[79] INFO Epoch 63 Batch 361 Avg loss 1.182176
+09:35:59 NeuralNetwork.py[79] INFO Epoch 63 Batch 434 Avg loss 1.183556
+09:36:54 NeuralNetwork.py[86] INFO Epoch 63 Loss 1.181335 Time elapsed 417.783110
+09:36:54 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-63.model
+09:36:54 NeuralNetwork.py[79] INFO Epoch 64 Batch 0 Avg loss 1.219946
+09:37:54 NeuralNetwork.py[79] INFO Epoch 64 Batch 72 Avg loss 1.158891
+09:38:55 NeuralNetwork.py[79] INFO Epoch 64 Batch 145 Avg loss 1.168633
+09:39:56 NeuralNetwork.py[79] INFO Epoch 64 Batch 218 Avg loss 1.171911
+09:40:56 NeuralNetwork.py[79] INFO Epoch 64 Batch 291 Avg loss 1.172383
+09:41:57 NeuralNetwork.py[79] INFO Epoch 64 Batch 364 Avg loss 1.176114
+09:42:57 NeuralNetwork.py[79] INFO Epoch 64 Batch 437 Avg loss 1.177740
+09:43:49 NeuralNetwork.py[86] INFO Epoch 64 Loss 1.175988 Time elapsed 415.256574
+09:43:49 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-64.model
+09:43:50 NeuralNetwork.py[79] INFO Epoch 65 Batch 0 Avg loss 1.219429
+09:44:50 NeuralNetwork.py[79] INFO Epoch 65 Batch 72 Avg loss 1.157855
+09:45:51 NeuralNetwork.py[79] INFO Epoch 65 Batch 144 Avg loss 1.164681
+09:46:51 NeuralNetwork.py[79] INFO Epoch 65 Batch 216 Avg loss 1.166912
+09:47:51 NeuralNetwork.py[79] INFO Epoch 65 Batch 287 Avg loss 1.168112
+09:48:52 NeuralNetwork.py[79] INFO Epoch 65 Batch 359 Avg loss 1.171456
+09:49:52 NeuralNetwork.py[79] INFO Epoch 65 Batch 431 Avg loss 1.173079
+09:50:50 NeuralNetwork.py[86] INFO Epoch 65 Loss 1.171805 Time elapsed 421.305629
+09:50:50 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-65.model
+09:50:51 NeuralNetwork.py[79] INFO Epoch 66 Batch 0 Avg loss 1.208343
+09:51:52 NeuralNetwork.py[79] INFO Epoch 66 Batch 72 Avg loss 1.153460
+09:52:52 NeuralNetwork.py[79] INFO Epoch 66 Batch 144 Avg loss 1.161387
+09:53:53 NeuralNetwork.py[79] INFO Epoch 66 Batch 216 Avg loss 1.163607
+09:54:53 NeuralNetwork.py[79] INFO Epoch 66 Batch 288 Avg loss 1.164153
+09:55:54 NeuralNetwork.py[79] INFO Epoch 66 Batch 360 Avg loss 1.168647
+09:56:54 NeuralNetwork.py[79] INFO Epoch 66 Batch 432 Avg loss 1.170110
+09:57:51 NeuralNetwork.py[86] INFO Epoch 66 Loss 1.167997 Time elapsed 420.227871
+09:57:51 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-66.model
+09:57:52 NeuralNetwork.py[79] INFO Epoch 67 Batch 0 Avg loss 1.213093
+09:58:52 NeuralNetwork.py[79] INFO Epoch 67 Batch 72 Avg loss 1.148622
+09:59:53 NeuralNetwork.py[79] INFO Epoch 67 Batch 144 Avg loss 1.157217
+10:00:53 NeuralNetwork.py[79] INFO Epoch 67 Batch 216 Avg loss 1.159531
+10:01:53 NeuralNetwork.py[79] INFO Epoch 67 Batch 288 Avg loss 1.158718
+10:02:54 NeuralNetwork.py[79] INFO Epoch 67 Batch 360 Avg loss 1.163693
+10:03:54 NeuralNetwork.py[79] INFO Epoch 67 Batch 432 Avg loss 1.165278
+10:04:51 NeuralNetwork.py[86] INFO Epoch 67 Loss 1.163044 Time elapsed 419.928085
+10:04:51 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-67.model
+10:04:52 NeuralNetwork.py[79] INFO Epoch 68 Batch 0 Avg loss 1.193302
+10:05:52 NeuralNetwork.py[79] INFO Epoch 68 Batch 72 Avg loss 1.142382
+10:06:53 NeuralNetwork.py[79] INFO Epoch 68 Batch 144 Avg loss 1.151864
+10:07:53 NeuralNetwork.py[79] INFO Epoch 68 Batch 216 Avg loss 1.155182
+10:08:54 NeuralNetwork.py[79] INFO Epoch 68 Batch 288 Avg loss 1.155465
+10:09:54 NeuralNetwork.py[79] INFO Epoch 68 Batch 360 Avg loss 1.159401
+10:10:54 NeuralNetwork.py[79] INFO Epoch 68 Batch 432 Avg loss 1.161030
+10:11:51 NeuralNetwork.py[86] INFO Epoch 68 Loss 1.158904 Time elapsed 419.820904
+10:11:51 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-68.model
+10:11:52 NeuralNetwork.py[79] INFO Epoch 69 Batch 0 Avg loss 1.211849
+10:12:52 NeuralNetwork.py[79] INFO Epoch 69 Batch 72 Avg loss 1.141682
+10:13:52 NeuralNetwork.py[79] INFO Epoch 69 Batch 144 Avg loss 1.150043
+10:14:53 NeuralNetwork.py[79] INFO Epoch 69 Batch 216 Avg loss 1.152115
+10:15:53 NeuralNetwork.py[79] INFO Epoch 69 Batch 288 Avg loss 1.152989
+10:16:54 NeuralNetwork.py[79] INFO Epoch 69 Batch 360 Avg loss 1.157273
+10:17:54 NeuralNetwork.py[79] INFO Epoch 69 Batch 432 Avg loss 1.158160
+10:18:50 NeuralNetwork.py[86] INFO Epoch 69 Loss 1.155866 Time elapsed 419.749061
+10:18:51 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-69.model
+10:18:51 NeuralNetwork.py[79] INFO Epoch 70 Batch 0 Avg loss 1.190066
+10:19:52 NeuralNetwork.py[79] INFO Epoch 70 Batch 72 Avg loss 1.138656
+10:20:52 NeuralNetwork.py[79] INFO Epoch 70 Batch 144 Avg loss 1.147014
+10:21:52 NeuralNetwork.py[79] INFO Epoch 70 Batch 215 Avg loss 1.148614
+10:22:53 NeuralNetwork.py[79] INFO Epoch 70 Batch 287 Avg loss 1.149092
+10:23:53 NeuralNetwork.py[79] INFO Epoch 70 Batch 359 Avg loss 1.153106
+10:24:54 NeuralNetwork.py[79] INFO Epoch 70 Batch 430 Avg loss 1.155047
+10:25:51 NeuralNetwork.py[86] INFO Epoch 70 Loss 1.152622 Time elapsed 420.738742
+10:25:51 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-70.model
+10:25:52 NeuralNetwork.py[79] INFO Epoch 71 Batch 0 Avg loss 1.202550
+10:26:53 NeuralNetwork.py[79] INFO Epoch 71 Batch 73 Avg loss 1.135426
+10:27:53 NeuralNetwork.py[79] INFO Epoch 71 Batch 146 Avg loss 1.143209
+10:28:54 NeuralNetwork.py[79] INFO Epoch 71 Batch 219 Avg loss 1.145074
+10:29:55 NeuralNetwork.py[79] INFO Epoch 71 Batch 292 Avg loss 1.144597
+10:30:55 NeuralNetwork.py[79] INFO Epoch 71 Batch 365 Avg loss 1.148263
+10:31:56 NeuralNetwork.py[79] INFO Epoch 71 Batch 438 Avg loss 1.150489
+10:32:46 NeuralNetwork.py[86] INFO Epoch 71 Loss 1.147816 Time elapsed 414.834904
+10:32:46 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-71.model
+10:32:47 NeuralNetwork.py[79] INFO Epoch 72 Batch 0 Avg loss 1.200510
+10:33:48 NeuralNetwork.py[79] INFO Epoch 72 Batch 73 Avg loss 1.129704
+10:34:48 NeuralNetwork.py[79] INFO Epoch 72 Batch 146 Avg loss 1.138051
+10:35:48 NeuralNetwork.py[79] INFO Epoch 72 Batch 218 Avg loss 1.140900
+10:36:49 NeuralNetwork.py[79] INFO Epoch 72 Batch 291 Avg loss 1.140841
+10:37:49 NeuralNetwork.py[79] INFO Epoch 72 Batch 363 Avg loss 1.144890
+10:38:49 NeuralNetwork.py[79] INFO Epoch 72 Batch 436 Avg loss 1.146220
+10:39:42 NeuralNetwork.py[86] INFO Epoch 72 Loss 1.143978 Time elapsed 415.112454
+10:39:42 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-72.model
+10:39:43 NeuralNetwork.py[79] INFO Epoch 73 Batch 0 Avg loss 1.201870
+10:40:43 NeuralNetwork.py[79] INFO Epoch 73 Batch 73 Avg loss 1.126143
+10:41:43 NeuralNetwork.py[79] INFO Epoch 73 Batch 146 Avg loss 1.135239
+10:42:44 NeuralNetwork.py[79] INFO Epoch 73 Batch 219 Avg loss 1.137268
+10:43:44 NeuralNetwork.py[79] INFO Epoch 73 Batch 291 Avg loss 1.137934
+10:44:45 NeuralNetwork.py[79] INFO Epoch 73 Batch 364 Avg loss 1.141877
+10:45:45 NeuralNetwork.py[79] INFO Epoch 73 Batch 436 Avg loss 1.143398
+10:46:37 NeuralNetwork.py[86] INFO Epoch 73 Loss 1.141424 Time elapsed 415.580729
+10:46:37 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-73.model
+10:46:38 NeuralNetwork.py[79] INFO Epoch 74 Batch 0 Avg loss 1.201097
+10:47:39 NeuralNetwork.py[79] INFO Epoch 74 Batch 73 Avg loss 1.123590
+10:48:39 NeuralNetwork.py[79] INFO Epoch 74 Batch 146 Avg loss 1.132384
+10:49:39 NeuralNetwork.py[79] INFO Epoch 74 Batch 219 Avg loss 1.134096
+10:50:40 NeuralNetwork.py[79] INFO Epoch 74 Batch 292 Avg loss 1.134268
+10:51:41 NeuralNetwork.py[79] INFO Epoch 74 Batch 365 Avg loss 1.137697
+10:52:41 NeuralNetwork.py[79] INFO Epoch 74 Batch 438 Avg loss 1.139195
+10:53:32 NeuralNetwork.py[86] INFO Epoch 74 Loss 1.136637 Time elapsed 414.689144
+10:53:32 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-74.model
+10:53:33 NeuralNetwork.py[79] INFO Epoch 75 Batch 0 Avg loss 1.182861
+10:54:33 NeuralNetwork.py[79] INFO Epoch 75 Batch 73 Avg loss 1.117687
+10:55:34 NeuralNetwork.py[79] INFO Epoch 75 Batch 146 Avg loss 1.126065
+10:56:34 NeuralNetwork.py[79] INFO Epoch 75 Batch 219 Avg loss 1.128731
+10:57:35 NeuralNetwork.py[79] INFO Epoch 75 Batch 292 Avg loss 1.128862
+10:58:35 NeuralNetwork.py[79] INFO Epoch 75 Batch 365 Avg loss 1.131779
+10:59:36 NeuralNetwork.py[79] INFO Epoch 75 Batch 438 Avg loss 1.133907
+11:00:27 NeuralNetwork.py[86] INFO Epoch 75 Loss 1.131347 Time elapsed 414.355592
+11:00:27 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-75.model
+11:00:27 NeuralNetwork.py[79] INFO Epoch 76 Batch 0 Avg loss 1.180910
+11:01:28 NeuralNetwork.py[79] INFO Epoch 76 Batch 73 Avg loss 1.115519
+11:02:28 NeuralNetwork.py[79] INFO Epoch 76 Batch 146 Avg loss 1.125015
+11:03:29 NeuralNetwork.py[79] INFO Epoch 76 Batch 219 Avg loss 1.127177
+11:04:29 NeuralNetwork.py[79] INFO Epoch 76 Batch 292 Avg loss 1.127203
+11:05:30 NeuralNetwork.py[79] INFO Epoch 76 Batch 365 Avg loss 1.130813
+11:06:30 NeuralNetwork.py[79] INFO Epoch 76 Batch 438 Avg loss 1.132451
+11:07:21 NeuralNetwork.py[86] INFO Epoch 76 Loss 1.129566 Time elapsed 414.228672
+11:07:21 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-76.model
+11:07:22 NeuralNetwork.py[79] INFO Epoch 77 Batch 0 Avg loss 1.180312
+11:08:22 NeuralNetwork.py[79] INFO Epoch 77 Batch 73 Avg loss 1.111135
+11:09:22 NeuralNetwork.py[79] INFO Epoch 77 Batch 146 Avg loss 1.118763
+11:10:23 NeuralNetwork.py[79] INFO Epoch 77 Batch 219 Avg loss 1.121323
+11:11:23 NeuralNetwork.py[79] INFO Epoch 77 Batch 291 Avg loss 1.120871
+11:12:23 NeuralNetwork.py[79] INFO Epoch 77 Batch 364 Avg loss 1.124443
+11:13:23 NeuralNetwork.py[79] INFO Epoch 77 Batch 437 Avg loss 1.127221
+11:14:14 NeuralNetwork.py[86] INFO Epoch 77 Loss 1.124427 Time elapsed 413.135582
+11:14:14 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-77.model
+11:14:15 NeuralNetwork.py[79] INFO Epoch 78 Batch 0 Avg loss 1.178462
+11:15:16 NeuralNetwork.py[79] INFO Epoch 78 Batch 73 Avg loss 1.107873
+11:16:16 NeuralNetwork.py[79] INFO Epoch 78 Batch 146 Avg loss 1.116739
+11:17:16 NeuralNetwork.py[79] INFO Epoch 78 Batch 219 Avg loss 1.119857
+11:18:16 NeuralNetwork.py[79] INFO Epoch 78 Batch 292 Avg loss 1.120240
+11:19:16 NeuralNetwork.py[79] INFO Epoch 78 Batch 362 Avg loss 1.123799
+11:20:17 NeuralNetwork.py[79] INFO Epoch 78 Batch 434 Avg loss 1.125809
+11:21:11 NeuralNetwork.py[86] INFO Epoch 78 Loss 1.122926 Time elapsed 417.153155
+11:21:11 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-78.model
+11:21:12 NeuralNetwork.py[79] INFO Epoch 79 Batch 0 Avg loss 1.168658
+11:22:13 NeuralNetwork.py[79] INFO Epoch 79 Batch 72 Avg loss 1.104188
+11:23:13 NeuralNetwork.py[79] INFO Epoch 79 Batch 144 Avg loss 1.114411
+11:24:13 NeuralNetwork.py[79] INFO Epoch 79 Batch 216 Avg loss 1.117121
+11:25:14 NeuralNetwork.py[79] INFO Epoch 79 Batch 288 Avg loss 1.117289
+11:26:14 NeuralNetwork.py[79] INFO Epoch 79 Batch 360 Avg loss 1.121182
+11:27:15 NeuralNetwork.py[79] INFO Epoch 79 Batch 432 Avg loss 1.122997
+11:28:11 NeuralNetwork.py[86] INFO Epoch 79 Loss 1.120335 Time elapsed 419.367232
+11:28:11 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-79.model
+11:28:12 NeuralNetwork.py[79] INFO Epoch 80 Batch 0 Avg loss 1.170380
+11:29:12 NeuralNetwork.py[79] INFO Epoch 80 Batch 72 Avg loss 1.101906
+11:30:13 NeuralNetwork.py[79] INFO Epoch 80 Batch 144 Avg loss 1.110070
+11:31:13 NeuralNetwork.py[79] INFO Epoch 80 Batch 216 Avg loss 1.112441
+11:32:14 NeuralNetwork.py[79] INFO Epoch 80 Batch 288 Avg loss 1.112298
+11:33:14 NeuralNetwork.py[79] INFO Epoch 80 Batch 360 Avg loss 1.116337
+11:34:15 NeuralNetwork.py[79] INFO Epoch 80 Batch 432 Avg loss 1.117953
+11:35:11 NeuralNetwork.py[86] INFO Epoch 80 Loss 1.115564 Time elapsed 420.030416
+11:35:11 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-80.model
+11:35:12 NeuralNetwork.py[79] INFO Epoch 81 Batch 0 Avg loss 1.171333
+11:36:12 NeuralNetwork.py[79] INFO Epoch 81 Batch 72 Avg loss 1.100360
+11:37:13 NeuralNetwork.py[79] INFO Epoch 81 Batch 144 Avg loss 1.108025
+11:38:13 NeuralNetwork.py[79] INFO Epoch 81 Batch 216 Avg loss 1.110104
+11:39:14 NeuralNetwork.py[79] INFO Epoch 81 Batch 288 Avg loss 1.109832
+11:40:14 NeuralNetwork.py[79] INFO Epoch 81 Batch 360 Avg loss 1.113684
+11:41:14 NeuralNetwork.py[79] INFO Epoch 81 Batch 432 Avg loss 1.115501
+11:42:11 NeuralNetwork.py[86] INFO Epoch 81 Loss 1.112777 Time elapsed 419.491792
+11:42:11 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-81.model
+11:42:12 NeuralNetwork.py[79] INFO Epoch 82 Batch 0 Avg loss 1.164767
+11:43:12 NeuralNetwork.py[79] INFO Epoch 82 Batch 72 Avg loss 1.096711
+11:44:13 NeuralNetwork.py[79] INFO Epoch 82 Batch 144 Avg loss 1.104805
+11:45:13 NeuralNetwork.py[79] INFO Epoch 82 Batch 216 Avg loss 1.105940
+11:46:13 NeuralNetwork.py[79] INFO Epoch 82 Batch 288 Avg loss 1.106678
+11:47:14 NeuralNetwork.py[79] INFO Epoch 82 Batch 360 Avg loss 1.109929
+11:48:14 NeuralNetwork.py[79] INFO Epoch 82 Batch 432 Avg loss 1.111696
+11:49:10 NeuralNetwork.py[86] INFO Epoch 82 Loss 1.109602 Time elapsed 419.582411
+11:49:10 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-82.model
+11:49:11 NeuralNetwork.py[79] INFO Epoch 83 Batch 0 Avg loss 1.176261
+11:50:12 NeuralNetwork.py[79] INFO Epoch 83 Batch 72 Avg loss 1.095778
+11:51:12 NeuralNetwork.py[79] INFO Epoch 83 Batch 145 Avg loss 1.101912
+11:52:12 NeuralNetwork.py[79] INFO Epoch 83 Batch 218 Avg loss 1.104273
+11:53:13 NeuralNetwork.py[79] INFO Epoch 83 Batch 290 Avg loss 1.103486
+11:54:13 NeuralNetwork.py[79] INFO Epoch 83 Batch 362 Avg loss 1.108691
+11:55:13 NeuralNetwork.py[79] INFO Epoch 83 Batch 435 Avg loss 1.110527
+11:56:06 NeuralNetwork.py[86] INFO Epoch 83 Loss 1.107841 Time elapsed 415.348382
+11:56:06 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-83.model
+11:56:07 NeuralNetwork.py[79] INFO Epoch 84 Batch 0 Avg loss 1.162515
+11:57:07 NeuralNetwork.py[79] INFO Epoch 84 Batch 72 Avg loss 1.089945
+11:58:08 NeuralNetwork.py[79] INFO Epoch 84 Batch 144 Avg loss 1.098687
+11:59:08 NeuralNetwork.py[79] INFO Epoch 84 Batch 216 Avg loss 1.101145
+12:00:09 NeuralNetwork.py[79] INFO Epoch 84 Batch 288 Avg loss 1.101264
+12:01:09 NeuralNetwork.py[79] INFO Epoch 84 Batch 360 Avg loss 1.104956
+12:02:10 NeuralNetwork.py[79] INFO Epoch 84 Batch 432 Avg loss 1.107138
+12:03:05 NeuralNetwork.py[86] INFO Epoch 84 Loss 1.104839 Time elapsed 419.204548
+12:03:05 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-84.model
+12:03:06 NeuralNetwork.py[79] INFO Epoch 85 Batch 0 Avg loss 1.143503
+12:04:07 NeuralNetwork.py[79] INFO Epoch 85 Batch 73 Avg loss 1.086810
+12:05:07 NeuralNetwork.py[79] INFO Epoch 85 Batch 146 Avg loss 1.094217
+12:06:07 NeuralNetwork.py[79] INFO Epoch 85 Batch 219 Avg loss 1.098408
+12:07:07 NeuralNetwork.py[79] INFO Epoch 85 Batch 292 Avg loss 1.097979
+12:08:08 NeuralNetwork.py[79] INFO Epoch 85 Batch 365 Avg loss 1.101497
+12:09:08 NeuralNetwork.py[79] INFO Epoch 85 Batch 437 Avg loss 1.103652
+12:09:59 NeuralNetwork.py[86] INFO Epoch 85 Loss 1.101192 Time elapsed 414.071160
+12:09:59 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-85.model
+12:10:00 NeuralNetwork.py[79] INFO Epoch 86 Batch 0 Avg loss 1.168854
+12:11:01 NeuralNetwork.py[79] INFO Epoch 86 Batch 73 Avg loss 1.082248
+12:12:01 NeuralNetwork.py[79] INFO Epoch 86 Batch 146 Avg loss 1.091503
+12:13:01 NeuralNetwork.py[79] INFO Epoch 86 Batch 219 Avg loss 1.095072
+12:14:02 NeuralNetwork.py[79] INFO Epoch 86 Batch 292 Avg loss 1.094106
+12:15:03 NeuralNetwork.py[79] INFO Epoch 86 Batch 365 Avg loss 1.098556
+12:16:03 NeuralNetwork.py[79] INFO Epoch 86 Batch 438 Avg loss 1.101437
+12:16:53 NeuralNetwork.py[86] INFO Epoch 86 Loss 1.098480 Time elapsed 414.091542
+12:16:54 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-86.model
+12:16:54 NeuralNetwork.py[79] INFO Epoch 87 Batch 0 Avg loss 1.172283
+12:17:54 NeuralNetwork.py[79] INFO Epoch 87 Batch 73 Avg loss 1.082179
+12:18:55 NeuralNetwork.py[79] INFO Epoch 87 Batch 146 Avg loss 1.094128
+12:19:55 NeuralNetwork.py[79] INFO Epoch 87 Batch 219 Avg loss 1.096134
+12:20:55 NeuralNetwork.py[79] INFO Epoch 87 Batch 292 Avg loss 1.094613
+12:21:55 NeuralNetwork.py[79] INFO Epoch 87 Batch 365 Avg loss 1.097910
+12:22:56 NeuralNetwork.py[79] INFO Epoch 87 Batch 438 Avg loss 1.100433
+12:23:46 NeuralNetwork.py[86] INFO Epoch 87 Loss 1.097352 Time elapsed 412.300854
+12:23:46 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-87.model
+12:23:47 NeuralNetwork.py[79] INFO Epoch 88 Batch 0 Avg loss 1.162774
+12:24:47 NeuralNetwork.py[79] INFO Epoch 88 Batch 72 Avg loss 1.080600
+12:25:47 NeuralNetwork.py[79] INFO Epoch 88 Batch 145 Avg loss 1.089338
+12:26:47 NeuralNetwork.py[79] INFO Epoch 88 Batch 218 Avg loss 1.091927
+12:27:47 NeuralNetwork.py[79] INFO Epoch 88 Batch 291 Avg loss 1.089983
+12:28:48 NeuralNetwork.py[79] INFO Epoch 88 Batch 364 Avg loss 1.093712
+12:29:48 NeuralNetwork.py[79] INFO Epoch 88 Batch 437 Avg loss 1.096438
+12:30:39 NeuralNetwork.py[86] INFO Epoch 88 Loss 1.094089 Time elapsed 413.072488
+12:30:39 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-88.model
+12:30:40 NeuralNetwork.py[79] INFO Epoch 89 Batch 0 Avg loss 1.158632
+12:31:40 NeuralNetwork.py[79] INFO Epoch 89 Batch 73 Avg loss 1.074490
+12:32:41 NeuralNetwork.py[79] INFO Epoch 89 Batch 146 Avg loss 1.083178
+12:33:41 NeuralNetwork.py[79] INFO Epoch 89 Batch 219 Avg loss 1.086573
+12:34:41 NeuralNetwork.py[79] INFO Epoch 89 Batch 292 Avg loss 1.085408
+12:35:42 NeuralNetwork.py[79] INFO Epoch 89 Batch 365 Avg loss 1.089584
+12:36:42 NeuralNetwork.py[79] INFO Epoch 89 Batch 438 Avg loss 1.092581
+12:37:32 NeuralNetwork.py[86] INFO Epoch 89 Loss 1.089612 Time elapsed 413.303840
+12:37:33 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-89.model
+12:37:33 NeuralNetwork.py[79] INFO Epoch 90 Batch 0 Avg loss 1.169526
+12:38:33 NeuralNetwork.py[79] INFO Epoch 90 Batch 72 Avg loss 1.077088
+12:39:34 NeuralNetwork.py[79] INFO Epoch 90 Batch 144 Avg loss 1.085563
+12:40:35 NeuralNetwork.py[79] INFO Epoch 90 Batch 216 Avg loss 1.086738
+12:41:35 NeuralNetwork.py[79] INFO Epoch 90 Batch 288 Avg loss 1.084671
+12:42:36 NeuralNetwork.py[79] INFO Epoch 90 Batch 361 Avg loss 1.088594
+12:43:36 NeuralNetwork.py[79] INFO Epoch 90 Batch 436 Avg loss 1.090409
+12:44:28 NeuralNetwork.py[86] INFO Epoch 90 Loss 1.087852 Time elapsed 415.187396
+12:44:28 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-90.model
+12:44:29 NeuralNetwork.py[79] INFO Epoch 91 Batch 0 Avg loss 1.154853
+12:45:29 NeuralNetwork.py[79] INFO Epoch 91 Batch 76 Avg loss 1.067957
+12:46:30 NeuralNetwork.py[79] INFO Epoch 91 Batch 151 Avg loss 1.082431
+12:47:31 NeuralNetwork.py[79] INFO Epoch 91 Batch 227 Avg loss 1.083996
+12:48:31 NeuralNetwork.py[79] INFO Epoch 91 Batch 302 Avg loss 1.081288
+12:49:31 NeuralNetwork.py[79] INFO Epoch 91 Batch 378 Avg loss 1.087419
+12:50:31 NeuralNetwork.py[79] INFO Epoch 91 Batch 453 Avg loss 1.089182
+12:51:09 NeuralNetwork.py[86] INFO Epoch 91 Loss 1.085830 Time elapsed 400.835426
+12:51:09 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-91.model
+12:51:10 NeuralNetwork.py[79] INFO Epoch 92 Batch 0 Avg loss 1.157886
+12:52:10 NeuralNetwork.py[79] INFO Epoch 92 Batch 75 Avg loss 1.068253
+12:53:11 NeuralNetwork.py[79] INFO Epoch 92 Batch 149 Avg loss 1.078184
+12:54:12 NeuralNetwork.py[79] INFO Epoch 92 Batch 222 Avg loss 1.080303
+12:55:12 NeuralNetwork.py[79] INFO Epoch 92 Batch 295 Avg loss 1.077186
+12:56:13 NeuralNetwork.py[79] INFO Epoch 92 Batch 369 Avg loss 1.083070
+12:57:13 NeuralNetwork.py[79] INFO Epoch 92 Batch 441 Avg loss 1.085856
+12:58:01 NeuralNetwork.py[86] INFO Epoch 92 Loss 1.082771 Time elapsed 412.127166
+12:58:01 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-92.model
+12:58:02 NeuralNetwork.py[79] INFO Epoch 93 Batch 0 Avg loss 1.153529
+12:59:02 NeuralNetwork.py[79] INFO Epoch 93 Batch 74 Avg loss 1.064347
+13:00:02 NeuralNetwork.py[79] INFO Epoch 93 Batch 148 Avg loss 1.075993
+13:01:02 NeuralNetwork.py[79] INFO Epoch 93 Batch 223 Avg loss 1.077595
+13:02:03 NeuralNetwork.py[79] INFO Epoch 93 Batch 297 Avg loss 1.074520
+13:03:03 NeuralNetwork.py[79] INFO Epoch 93 Batch 371 Avg loss 1.080033
+13:04:03 NeuralNetwork.py[79] INFO Epoch 93 Batch 445 Avg loss 1.083966
+13:04:47 NeuralNetwork.py[86] INFO Epoch 93 Loss 1.080303 Time elapsed 405.475009
+13:04:47 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-93.model
+13:04:48 NeuralNetwork.py[79] INFO Epoch 94 Batch 0 Avg loss 1.178711
+13:05:48 NeuralNetwork.py[79] INFO Epoch 94 Batch 74 Avg loss 1.064985
+13:06:49 NeuralNetwork.py[79] INFO Epoch 94 Batch 149 Avg loss 1.076572
+13:07:49 NeuralNetwork.py[79] INFO Epoch 94 Batch 224 Avg loss 1.077724
+13:08:49 NeuralNetwork.py[79] INFO Epoch 94 Batch 299 Avg loss 1.074320
+13:09:50 NeuralNetwork.py[79] INFO Epoch 94 Batch 373 Avg loss 1.079670
+13:10:50 NeuralNetwork.py[79] INFO Epoch 94 Batch 445 Avg loss 1.082132
+13:11:34 NeuralNetwork.py[86] INFO Epoch 94 Loss 1.078238 Time elapsed 407.058224
+13:11:34 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-94.model
+13:11:35 NeuralNetwork.py[79] INFO Epoch 95 Batch 0 Avg loss 1.168839
+13:12:35 NeuralNetwork.py[79] INFO Epoch 95 Batch 73 Avg loss 1.061153
+13:13:36 NeuralNetwork.py[79] INFO Epoch 95 Batch 146 Avg loss 1.070650
+13:14:36 NeuralNetwork.py[79] INFO Epoch 95 Batch 221 Avg loss 1.075061
+13:15:37 NeuralNetwork.py[79] INFO Epoch 95 Batch 295 Avg loss 1.071469
+13:16:37 NeuralNetwork.py[79] INFO Epoch 95 Batch 369 Avg loss 1.076763
+13:17:37 NeuralNetwork.py[79] INFO Epoch 95 Batch 443 Avg loss 1.079990
+13:18:23 NeuralNetwork.py[86] INFO Epoch 95 Loss 1.075715 Time elapsed 408.873828
+13:18:23 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-95.model
+13:18:24 NeuralNetwork.py[79] INFO Epoch 96 Batch 0 Avg loss 1.159679
+13:19:24 NeuralNetwork.py[79] INFO Epoch 96 Batch 74 Avg loss 1.057166
+13:20:24 NeuralNetwork.py[79] INFO Epoch 96 Batch 148 Avg loss 1.069991
+13:21:25 NeuralNetwork.py[79] INFO Epoch 96 Batch 223 Avg loss 1.072534
+13:22:25 NeuralNetwork.py[79] INFO Epoch 96 Batch 298 Avg loss 1.070513
+13:23:26 NeuralNetwork.py[79] INFO Epoch 96 Batch 372 Avg loss 1.075229
+13:24:26 NeuralNetwork.py[79] INFO Epoch 96 Batch 446 Avg loss 1.078056
+13:25:10 NeuralNetwork.py[86] INFO Epoch 96 Loss 1.074406 Time elapsed 407.501160
+13:25:10 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-96.model
+13:25:11 NeuralNetwork.py[79] INFO Epoch 97 Batch 0 Avg loss 1.168354
+13:26:12 NeuralNetwork.py[79] INFO Epoch 97 Batch 74 Avg loss 1.056263
+13:27:12 NeuralNetwork.py[79] INFO Epoch 97 Batch 150 Avg loss 1.069168
+13:28:13 NeuralNetwork.py[79] INFO Epoch 97 Batch 226 Avg loss 1.070208
+13:29:13 NeuralNetwork.py[79] INFO Epoch 97 Batch 302 Avg loss 1.067283
+13:30:14 NeuralNetwork.py[79] INFO Epoch 97 Batch 377 Avg loss 1.073732
+13:31:14 NeuralNetwork.py[79] INFO Epoch 97 Batch 452 Avg loss 1.075323
+13:31:52 NeuralNetwork.py[86] INFO Epoch 97 Loss 1.071744 Time elapsed 401.608092
+13:31:52 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-97.model
+13:31:53 NeuralNetwork.py[79] INFO Epoch 98 Batch 0 Avg loss 1.159719
+13:32:54 NeuralNetwork.py[79] INFO Epoch 98 Batch 75 Avg loss 1.055377
+13:33:55 NeuralNetwork.py[79] INFO Epoch 98 Batch 151 Avg loss 1.065778
+13:34:55 NeuralNetwork.py[79] INFO Epoch 98 Batch 225 Avg loss 1.067172
+13:35:56 NeuralNetwork.py[79] INFO Epoch 98 Batch 300 Avg loss 1.064032
+13:36:57 NeuralNetwork.py[79] INFO Epoch 98 Batch 374 Avg loss 1.070285
+13:37:57 NeuralNetwork.py[79] INFO Epoch 98 Batch 448 Avg loss 1.073352
+13:38:37 NeuralNetwork.py[86] INFO Epoch 98 Loss 1.069722 Time elapsed 405.193731
+13:38:37 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-98.model
+13:38:38 NeuralNetwork.py[79] INFO Epoch 99 Batch 0 Avg loss 1.156881
+13:39:39 NeuralNetwork.py[79] INFO Epoch 99 Batch 72 Avg loss 1.051812
+13:40:40 NeuralNetwork.py[79] INFO Epoch 99 Batch 148 Avg loss 1.060997
+13:41:40 NeuralNetwork.py[79] INFO Epoch 99 Batch 223 Avg loss 1.063836
+13:42:41 NeuralNetwork.py[79] INFO Epoch 99 Batch 299 Avg loss 1.061311
+13:43:41 NeuralNetwork.py[79] INFO Epoch 99 Batch 375 Avg loss 1.067984
+13:44:42 NeuralNetwork.py[79] INFO Epoch 99 Batch 450 Avg loss 1.069872
+13:45:21 NeuralNetwork.py[86] INFO Epoch 99 Loss 1.066631 Time elapsed 403.790006
+13:45:21 NeuralNetwork.py[193] INFO Model dumped to cnn/tanh-softmax---epoch-99.model
+13:45:21 NeuralNetwork.py[148] INFO Start testing: len 10000 batch_size 100
+13:45:58 NeuralNetwork.py[161] INFO Done forward. Outputs: 10000
+13:45:58 NeuralNetwork.py[165] INFO 10000 tested.
+(0.61729999999999996, array([[656,  41,  62,  33,  18,  12,  23,  20,  85,  50],
+       [ 41, 722,   6,  13,   6,   7,  23,  24,  34, 124],
+       [ 81,  12, 383,  90, 110, 131, 107,  61,  15,  10],
+       [ 16,  16,  39, 432,  80, 247, 100,  48,  10,  12],
+       [ 25,   4,  62,  67, 526,  74, 107, 119,  14,   2],
+       [ 12,   6,  40, 196,  61, 573,  41,  50,  11,  10],
+       [  6,   3,  35,  63,  38,  27, 806,  17,   4,   1],
+       [ 13,   5,  28,  48,  65, 108,  19, 697,   2,  15],
+       [127,  72,  11,  31,  15,  10,  14,   9, 652,  59],
+       [ 38, 100,   5,  20,  10,   7,  23,  43,  28, 726]]))

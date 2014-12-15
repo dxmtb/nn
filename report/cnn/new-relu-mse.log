@@ -1,0 +1,110 @@
+14:11:27 NeuralNetwork.py[37] INFO Activation relu loss type mse
+14:11:28 CNN.py[31] INFO Layer output: (100, 32, 14, 14)
+14:11:28 CNN.py[31] INFO Layer output: (100, 32, 5, 5)
+14:11:28 CNN.py[36] INFO Output to FC: 800
+14:11:28 NeuralNetwork.py[56] INFO loading model from cnn/relu-mse---epoch-99.model
+14:11:28 NeuralNetwork.py[58] INFO Load done.
+14:11:28 NeuralNetwork.py[60] INFO start fitting epoch 10 batchsize 100 LR [1e-05, 2e-05]
+14:11:28 NeuralNetwork.py[79] INFO Epoch 0 Batch 0 Avg loss 0.198887
+14:12:29 NeuralNetwork.py[79] INFO Epoch 0 Batch 81 Avg loss 0.188239
+14:13:30 NeuralNetwork.py[79] INFO Epoch 0 Batch 161 Avg loss 0.189151
+14:14:30 NeuralNetwork.py[79] INFO Epoch 0 Batch 240 Avg loss 0.189660
+14:15:30 NeuralNetwork.py[79] INFO Epoch 0 Batch 319 Avg loss 0.188817
+14:16:31 NeuralNetwork.py[79] INFO Epoch 0 Batch 398 Avg loss 0.189296
+14:17:31 NeuralNetwork.py[79] INFO Epoch 0 Batch 477 Avg loss 0.188466
+14:17:48 NeuralNetwork.py[86] INFO Epoch 0 Loss 0.188249 Time elapsed 380.330631
+14:17:48 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-0.model
+14:17:49 NeuralNetwork.py[79] INFO Epoch 1 Batch 0 Avg loss 0.192385
+14:18:49 NeuralNetwork.py[79] INFO Epoch 1 Batch 79 Avg loss 0.185975
+14:19:50 NeuralNetwork.py[79] INFO Epoch 1 Batch 157 Avg loss 0.186973
+14:20:50 NeuralNetwork.py[79] INFO Epoch 1 Batch 236 Avg loss 0.187869
+14:21:51 NeuralNetwork.py[79] INFO Epoch 1 Batch 316 Avg loss 0.187249
+14:22:51 NeuralNetwork.py[79] INFO Epoch 1 Batch 396 Avg loss 0.187775
+14:23:51 NeuralNetwork.py[79] INFO Epoch 1 Batch 476 Avg loss 0.187339
+14:24:09 NeuralNetwork.py[86] INFO Epoch 1 Loss 0.187194 Time elapsed 380.702260
+14:24:09 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-1.model
+14:24:10 NeuralNetwork.py[79] INFO Epoch 2 Batch 0 Avg loss 0.191738
+14:25:10 NeuralNetwork.py[79] INFO Epoch 2 Batch 79 Avg loss 0.185346
+14:26:10 NeuralNetwork.py[79] INFO Epoch 2 Batch 158 Avg loss 0.186422
+14:27:11 NeuralNetwork.py[79] INFO Epoch 2 Batch 238 Avg loss 0.187197
+14:28:12 NeuralNetwork.py[79] INFO Epoch 2 Batch 317 Avg loss 0.186722
+14:29:12 NeuralNetwork.py[79] INFO Epoch 2 Batch 396 Avg loss 0.187315
+14:30:13 NeuralNetwork.py[79] INFO Epoch 2 Batch 475 Avg loss 0.186992
+14:30:31 NeuralNetwork.py[86] INFO Epoch 2 Loss 0.186845 Time elapsed 382.212737
+14:30:31 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-2.model
+14:30:32 NeuralNetwork.py[79] INFO Epoch 3 Batch 0 Avg loss 0.191319
+14:31:32 NeuralNetwork.py[79] INFO Epoch 3 Batch 78 Avg loss 0.184831
+14:32:32 NeuralNetwork.py[79] INFO Epoch 3 Batch 157 Avg loss 0.185962
+14:33:33 NeuralNetwork.py[79] INFO Epoch 3 Batch 236 Avg loss 0.186880
+14:34:33 NeuralNetwork.py[79] INFO Epoch 3 Batch 315 Avg loss 0.186323
+14:35:33 NeuralNetwork.py[79] INFO Epoch 3 Batch 393 Avg loss 0.186915
+14:36:33 NeuralNetwork.py[79] INFO Epoch 3 Batch 471 Avg loss 0.186827
+14:36:55 NeuralNetwork.py[86] INFO Epoch 3 Loss 0.186606 Time elapsed 383.591461
+14:36:55 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-3.model
+14:36:56 NeuralNetwork.py[79] INFO Epoch 4 Batch 0 Avg loss 0.190997
+14:37:56 NeuralNetwork.py[79] INFO Epoch 4 Batch 79 Avg loss 0.184571
+14:38:56 NeuralNetwork.py[79] INFO Epoch 4 Batch 158 Avg loss 0.185687
+14:39:57 NeuralNetwork.py[79] INFO Epoch 4 Batch 237 Avg loss 0.186558
+14:40:57 NeuralNetwork.py[79] INFO Epoch 4 Batch 316 Avg loss 0.186102
+14:41:58 NeuralNetwork.py[79] INFO Epoch 4 Batch 395 Avg loss 0.186683
+14:42:58 NeuralNetwork.py[79] INFO Epoch 4 Batch 475 Avg loss 0.186545
+14:43:17 NeuralNetwork.py[86] INFO Epoch 4 Loss 0.186409 Time elapsed 381.754653
+14:43:17 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-4.model
+14:43:18 NeuralNetwork.py[79] INFO Epoch 5 Batch 0 Avg loss 0.190764
+14:44:18 NeuralNetwork.py[79] INFO Epoch 5 Batch 79 Avg loss 0.184285
+14:45:18 NeuralNetwork.py[79] INFO Epoch 5 Batch 159 Avg loss 0.185569
+14:46:19 NeuralNetwork.py[79] INFO Epoch 5 Batch 238 Avg loss 0.186241
+14:47:19 NeuralNetwork.py[79] INFO Epoch 5 Batch 317 Avg loss 0.185877
+14:48:20 NeuralNetwork.py[79] INFO Epoch 5 Batch 396 Avg loss 0.186573
+14:49:20 NeuralNetwork.py[79] INFO Epoch 5 Batch 475 Avg loss 0.186376
+14:49:38 NeuralNetwork.py[86] INFO Epoch 5 Loss 0.186244 Time elapsed 381.686337
+14:49:39 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-5.model
+14:49:39 NeuralNetwork.py[79] INFO Epoch 6 Batch 0 Avg loss 0.190482
+14:50:40 NeuralNetwork.py[79] INFO Epoch 6 Batch 79 Avg loss 0.184033
+14:51:40 NeuralNetwork.py[79] INFO Epoch 6 Batch 158 Avg loss 0.185190
+14:52:41 NeuralNetwork.py[79] INFO Epoch 6 Batch 237 Avg loss 0.186086
+14:53:41 NeuralNetwork.py[79] INFO Epoch 6 Batch 315 Avg loss 0.185625
+14:54:41 NeuralNetwork.py[79] INFO Epoch 6 Batch 394 Avg loss 0.186299
+14:55:42 NeuralNetwork.py[79] INFO Epoch 6 Batch 473 Avg loss 0.186221
+14:56:02 NeuralNetwork.py[86] INFO Epoch 6 Loss 0.186095 Time elapsed 383.316615
+14:56:02 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-6.model
+14:56:03 NeuralNetwork.py[79] INFO Epoch 7 Batch 0 Avg loss 0.190239
+14:57:03 NeuralNetwork.py[79] INFO Epoch 7 Batch 78 Avg loss 0.183745
+14:58:04 NeuralNetwork.py[79] INFO Epoch 7 Batch 158 Avg loss 0.184991
+14:59:04 NeuralNetwork.py[79] INFO Epoch 7 Batch 237 Avg loss 0.185896
+15:00:04 NeuralNetwork.py[79] INFO Epoch 7 Batch 317 Avg loss 0.185505
+15:01:05 NeuralNetwork.py[79] INFO Epoch 7 Batch 396 Avg loss 0.186236
+15:02:05 NeuralNetwork.py[79] INFO Epoch 7 Batch 475 Avg loss 0.186087
+15:02:23 NeuralNetwork.py[86] INFO Epoch 7 Loss 0.185959 Time elapsed 380.975352
+15:02:23 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-7.model
+15:02:24 NeuralNetwork.py[79] INFO Epoch 8 Batch 0 Avg loss 0.190040
+15:03:24 NeuralNetwork.py[79] INFO Epoch 8 Batch 79 Avg loss 0.183623
+15:04:25 NeuralNetwork.py[79] INFO Epoch 8 Batch 159 Avg loss 0.184961
+15:05:25 NeuralNetwork.py[79] INFO Epoch 8 Batch 238 Avg loss 0.185659
+15:06:25 NeuralNetwork.py[79] INFO Epoch 8 Batch 317 Avg loss 0.185345
+15:07:25 NeuralNetwork.py[79] INFO Epoch 8 Batch 396 Avg loss 0.186090
+15:08:25 NeuralNetwork.py[79] INFO Epoch 8 Batch 475 Avg loss 0.185960
+15:08:43 NeuralNetwork.py[86] INFO Epoch 8 Loss 0.185833 Time elapsed 380.284518
+15:08:43 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-8.model
+15:08:44 NeuralNetwork.py[79] INFO Epoch 9 Batch 0 Avg loss 0.189941
+15:09:44 NeuralNetwork.py[79] INFO Epoch 9 Batch 79 Avg loss 0.183439
+15:10:45 NeuralNetwork.py[79] INFO Epoch 9 Batch 158 Avg loss 0.184633
+15:11:45 NeuralNetwork.py[79] INFO Epoch 9 Batch 237 Avg loss 0.185554
+15:12:45 NeuralNetwork.py[79] INFO Epoch 9 Batch 315 Avg loss 0.185135
+15:13:46 NeuralNetwork.py[79] INFO Epoch 9 Batch 394 Avg loss 0.185854
+15:14:46 NeuralNetwork.py[79] INFO Epoch 9 Batch 473 Avg loss 0.185833
+15:15:06 NeuralNetwork.py[86] INFO Epoch 9 Loss 0.185710 Time elapsed 382.473675
+15:15:06 NeuralNetwork.py[193] INFO Model dumped to cnn/new-relu-mse-epoch-9.model
+15:15:06 NeuralNetwork.py[148] INFO Start testing: len 10000 batch_size 100
+15:15:36 NeuralNetwork.py[161] INFO Done forward. Outputs: 10000
+15:15:36 NeuralNetwork.py[165] INFO 10000 tested.
+(0.70530000000000004, array([[737,  33,  36,  20,  20,  12,  16,  16,  71,  39],
+       [ 24, 836,   7,  12,   5,   6,  17,   6,  20,  67],
+       [ 79,  15, 532,  66,  73,  94,  75,  37,  16,  13],
+       [ 25,  24,  54, 504,  56, 190,  74,  43,  16,  14],
+       [ 30,   9,  61,  58, 622,  51,  62,  86,  13,   8],
+       [  7,   8,  46, 139,  41, 653,  32,  52,   8,  14],
+       [ 11,   5,  36,  55,  26,  26, 814,  14,   7,   6],
+       [ 25,   3,  20,  37,  45,  93,  16, 742,   4,  15],
+       [ 47,  47,  13,  17,   8,  11,   7,   6, 809,  35],
+       [ 26,  79,   6,  15,   6,   7,  13,  15,  29, 804]]))

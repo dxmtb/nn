@@ -1,0 +1,110 @@
+14:11:27 NeuralNetwork.py[37] INFO Activation sigmoid loss type softmax
+14:11:28 CNN.py[31] INFO Layer output: (100, 32, 14, 14)
+14:11:28 CNN.py[31] INFO Layer output: (100, 32, 5, 5)
+14:11:28 CNN.py[36] INFO Output to FC: 800
+14:11:28 NeuralNetwork.py[56] INFO loading model from cnn/sigmoid-softmax---epoch-99.model
+14:11:28 NeuralNetwork.py[58] INFO Load done.
+14:11:28 NeuralNetwork.py[60] INFO start fitting epoch 10 batchsize 100 LR [1e-05, 2e-05]
+14:11:29 NeuralNetwork.py[79] INFO Epoch 0 Batch 0 Avg loss 1.797707
+14:12:29 NeuralNetwork.py[79] INFO Epoch 0 Batch 72 Avg loss 1.757224
+14:13:29 NeuralNetwork.py[79] INFO Epoch 0 Batch 145 Avg loss 1.767495
+14:14:30 NeuralNetwork.py[79] INFO Epoch 0 Batch 218 Avg loss 1.768823
+14:15:30 NeuralNetwork.py[79] INFO Epoch 0 Batch 291 Avg loss 1.764100
+14:16:31 NeuralNetwork.py[79] INFO Epoch 0 Batch 365 Avg loss 1.765430
+14:17:31 NeuralNetwork.py[79] INFO Epoch 0 Batch 438 Avg loss 1.766467
+14:18:21 NeuralNetwork.py[86] INFO Epoch 0 Loss 1.766507 Time elapsed 413.226005
+14:18:21 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-0.model
+14:18:22 NeuralNetwork.py[79] INFO Epoch 1 Batch 0 Avg loss 1.788864
+14:19:22 NeuralNetwork.py[79] INFO Epoch 1 Batch 74 Avg loss 1.753668
+14:20:23 NeuralNetwork.py[79] INFO Epoch 1 Batch 147 Avg loss 1.765778
+14:21:23 NeuralNetwork.py[79] INFO Epoch 1 Batch 220 Avg loss 1.767001
+14:22:24 NeuralNetwork.py[79] INFO Epoch 1 Batch 293 Avg loss 1.762361
+14:23:25 NeuralNetwork.py[79] INFO Epoch 1 Batch 366 Avg loss 1.764135
+14:24:25 NeuralNetwork.py[79] INFO Epoch 1 Batch 439 Avg loss 1.765597
+14:25:14 NeuralNetwork.py[86] INFO Epoch 1 Loss 1.765658 Time elapsed 413.243335
+14:25:14 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-1.model
+14:25:15 NeuralNetwork.py[79] INFO Epoch 2 Batch 0 Avg loss 1.788523
+14:26:16 NeuralNetwork.py[79] INFO Epoch 2 Batch 73 Avg loss 1.753045
+14:27:16 NeuralNetwork.py[79] INFO Epoch 2 Batch 145 Avg loss 1.765188
+14:28:17 NeuralNetwork.py[79] INFO Epoch 2 Batch 218 Avg loss 1.766948
+14:29:17 NeuralNetwork.py[79] INFO Epoch 2 Batch 290 Avg loss 1.762312
+14:30:18 NeuralNetwork.py[79] INFO Epoch 2 Batch 362 Avg loss 1.764409
+14:31:18 NeuralNetwork.py[79] INFO Epoch 2 Batch 434 Avg loss 1.764742
+14:32:12 NeuralNetwork.py[86] INFO Epoch 2 Loss 1.765278 Time elapsed 417.324797
+14:32:12 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-2.model
+14:32:13 NeuralNetwork.py[79] INFO Epoch 3 Batch 0 Avg loss 1.788389
+14:33:13 NeuralNetwork.py[79] INFO Epoch 3 Batch 73 Avg loss 1.752673
+14:34:13 NeuralNetwork.py[79] INFO Epoch 3 Batch 145 Avg loss 1.764826
+14:35:14 NeuralNetwork.py[79] INFO Epoch 3 Batch 218 Avg loss 1.766579
+14:36:14 NeuralNetwork.py[79] INFO Epoch 3 Batch 290 Avg loss 1.761945
+14:37:14 NeuralNetwork.py[79] INFO Epoch 3 Batch 362 Avg loss 1.764041
+14:38:15 NeuralNetwork.py[79] INFO Epoch 3 Batch 435 Avg loss 1.764458
+14:39:08 NeuralNetwork.py[86] INFO Epoch 3 Loss 1.764911 Time elapsed 416.335078
+14:39:08 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-3.model
+14:39:09 NeuralNetwork.py[79] INFO Epoch 4 Batch 0 Avg loss 1.788318
+14:40:10 NeuralNetwork.py[79] INFO Epoch 4 Batch 73 Avg loss 1.752316
+14:41:10 NeuralNetwork.py[79] INFO Epoch 4 Batch 146 Avg loss 1.763862
+14:42:11 NeuralNetwork.py[79] INFO Epoch 4 Batch 219 Avg loss 1.765983
+14:43:11 NeuralNetwork.py[79] INFO Epoch 4 Batch 292 Avg loss 1.761575
+14:44:12 NeuralNetwork.py[79] INFO Epoch 4 Batch 365 Avg loss 1.763262
+14:45:12 NeuralNetwork.py[79] INFO Epoch 4 Batch 439 Avg loss 1.764472
+14:46:02 NeuralNetwork.py[86] INFO Epoch 4 Loss 1.764545 Time elapsed 413.647086
+14:46:02 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-4.model
+14:46:03 NeuralNetwork.py[79] INFO Epoch 5 Batch 0 Avg loss 1.788271
+14:47:03 NeuralNetwork.py[79] INFO Epoch 5 Batch 73 Avg loss 1.751964
+14:48:04 NeuralNetwork.py[79] INFO Epoch 5 Batch 146 Avg loss 1.763516
+14:49:04 NeuralNetwork.py[79] INFO Epoch 5 Batch 219 Avg loss 1.765627
+14:50:05 NeuralNetwork.py[79] INFO Epoch 5 Batch 292 Avg loss 1.761215
+14:51:05 NeuralNetwork.py[79] INFO Epoch 5 Batch 364 Avg loss 1.763277
+14:52:06 NeuralNetwork.py[79] INFO Epoch 5 Batch 437 Avg loss 1.763764
+14:52:57 NeuralNetwork.py[86] INFO Epoch 5 Loss 1.764179 Time elapsed 415.034985
+14:52:57 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-5.model
+14:52:58 NeuralNetwork.py[79] INFO Epoch 6 Batch 0 Avg loss 1.788242
+14:53:58 NeuralNetwork.py[79] INFO Epoch 6 Batch 73 Avg loss 1.751613
+14:54:59 NeuralNetwork.py[79] INFO Epoch 6 Batch 146 Avg loss 1.763170
+14:56:00 NeuralNetwork.py[79] INFO Epoch 6 Batch 219 Avg loss 1.765272
+14:57:00 NeuralNetwork.py[79] INFO Epoch 6 Batch 292 Avg loss 1.760856
+14:58:00 NeuralNetwork.py[79] INFO Epoch 6 Batch 364 Avg loss 1.762916
+14:59:01 NeuralNetwork.py[79] INFO Epoch 6 Batch 437 Avg loss 1.763399
+14:59:52 NeuralNetwork.py[86] INFO Epoch 6 Loss 1.763813 Time elapsed 414.537404
+14:59:52 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-6.model
+14:59:53 NeuralNetwork.py[79] INFO Epoch 7 Batch 0 Avg loss 1.788221
+15:00:53 NeuralNetwork.py[79] INFO Epoch 7 Batch 73 Avg loss 1.751262
+15:01:54 NeuralNetwork.py[79] INFO Epoch 7 Batch 145 Avg loss 1.763441
+15:02:54 NeuralNetwork.py[79] INFO Epoch 7 Batch 218 Avg loss 1.765155
+15:03:55 NeuralNetwork.py[79] INFO Epoch 7 Batch 291 Avg loss 1.760715
+15:04:56 NeuralNetwork.py[79] INFO Epoch 7 Batch 364 Avg loss 1.762554
+15:05:56 NeuralNetwork.py[79] INFO Epoch 7 Batch 437 Avg loss 1.763034
+15:06:48 NeuralNetwork.py[86] INFO Epoch 7 Loss 1.763447 Time elapsed 416.212427
+15:06:48 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-7.model
+15:06:49 NeuralNetwork.py[79] INFO Epoch 8 Batch 0 Avg loss 1.788202
+15:07:50 NeuralNetwork.py[79] INFO Epoch 8 Batch 73 Avg loss 1.750909
+15:08:50 NeuralNetwork.py[79] INFO Epoch 8 Batch 146 Avg loss 1.762475
+15:09:51 NeuralNetwork.py[79] INFO Epoch 8 Batch 219 Avg loss 1.764564
+15:10:51 NeuralNetwork.py[79] INFO Epoch 8 Batch 292 Avg loss 1.760140
+15:11:52 NeuralNetwork.py[79] INFO Epoch 8 Batch 364 Avg loss 1.762194
+15:12:52 NeuralNetwork.py[79] INFO Epoch 8 Batch 436 Avg loss 1.762416
+15:13:44 NeuralNetwork.py[86] INFO Epoch 8 Loss 1.763082 Time elapsed 416.050695
+15:13:44 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-8.model
+15:13:45 NeuralNetwork.py[79] INFO Epoch 9 Batch 0 Avg loss 1.788195
+15:14:45 NeuralNetwork.py[79] INFO Epoch 9 Batch 73 Avg loss 1.750553
+15:15:46 NeuralNetwork.py[79] INFO Epoch 9 Batch 146 Avg loss 1.762128
+15:16:47 NeuralNetwork.py[79] INFO Epoch 9 Batch 220 Avg loss 1.764094
+15:17:47 NeuralNetwork.py[79] INFO Epoch 9 Batch 294 Avg loss 1.759502
+15:18:48 NeuralNetwork.py[79] INFO Epoch 9 Batch 369 Avg loss 1.760949
+15:19:48 NeuralNetwork.py[79] INFO Epoch 9 Batch 443 Avg loss 1.763019
+15:20:34 NeuralNetwork.py[86] INFO Epoch 9 Loss 1.762719 Time elapsed 409.652335
+15:20:34 NeuralNetwork.py[193] INFO Model dumped to cnn/new-sigmoid-softmax-epoch-9.model
+15:20:34 NeuralNetwork.py[148] INFO Start testing: len 10000 batch_size 100
+15:21:09 NeuralNetwork.py[161] INFO Done forward. Outputs: 10000
+15:21:09 NeuralNetwork.py[165] INFO 10000 tested.
+(0.36380000000000001, array([[496,  87,  21,  15,  20,  19,  23,  63, 210,  46],
+       [ 70, 498,   1,  12,   0,   5,  35,  26, 150, 203],
+       [129,  43, 118,  67, 207,  69, 169, 124,  51,  23],
+       [ 72,  45,  38, 179,  73, 137, 217, 151,  52,  36],
+       [ 99,  13,  54,  38, 310,  47, 226, 157,  42,  14],
+       [ 63,  26,  84, 133, 103, 201, 161, 145,  50,  34],
+       [ 16,  29,  27,  85, 101,  38, 588,  82,  15,  19],
+       [ 78,  32,  43,  54, 109,  49,  78, 466,  39,  52],
+       [217, 119,   7,  40,   9,  13,  29,  16, 461,  89],
+       [ 84, 272,   5,  16,   4,   7,  52,  54, 185, 321]]))
